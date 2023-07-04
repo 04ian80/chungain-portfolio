@@ -1,7 +1,7 @@
-import './App.css';
+import './styles/styles.scss';
 
 const App = () => {
-  return <></>;
+  return <div className='App'>App</div>;
 };
 
 export default App;
