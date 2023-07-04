@@ -1,0 +1,57 @@
+@import './variables';
+
+// style
+@mixin flexbox($display: flex, $justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// media
+@mixin fold {
+  @media (max-width: #{$breakpoint-fold}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (min-width: #{$breakpoint-fold}) and (max-width: #{$breakpoint-mobile - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-max {
+  @media (max-width: #{$breakpoint-tablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-min {
+  @media (min-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+@mixin labtop {
+  @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-labtop - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$breakpoint-labtop}) {
+    @content;
+  }
+}
+
+@mixin desktop-max {
+  @media (max-width: #{$breakpoint-labtop}) {
+    @content;
+  }
+}
