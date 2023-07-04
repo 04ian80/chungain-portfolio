@@ -8,3 +8,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
 }
+
+h2 {
+  font-weight: 600;
+  margin: 0;
+}
+
+menu {
+  padding: 0;
+  margin: 0;
+}
+
+// layout
+@import './scss/layout/header';
+
+// components
+@import './scss/components/modal';
+
+// abstracts
+@import './scss/abstracts/mixins';
+@import './scss/abstracts/variables';

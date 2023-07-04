@@ -1,0 +1,111 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css');
+body {
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue',
+    'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji',
+    'Segoe UI Symbol', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
+
+h2 {
+  font-weight: 600;
+  margin: 0;
+}
+
+menu {
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  box-shadow: 1px 1px 10px 5px #eee;
+  padding: 15px 20px;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 2;
+}
+.header__nav .header__logo {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+@media (max-width: 767px) {
+  .header__nav .nav__bar {
+    display: none;
+  }
+}
+.header__nav .nav__bar .nav--links > * {
+  height: 100%;
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.header__nav .nav__bar .nav--links .nav--contact-list > *:not(:first-child) {
+  margin-left: 2rem;
+}
+
+.nav--links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+.nav--links > *:hover:not(:last-child) {
+  cursor: pointer;
+  background-color: #eee;
+}
+.nav--links .nav--contact-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+.nav__menu {
+  position: relative;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .nav__menu {
+    display: none;
+  }
+}
+.nav__menu .nav__menu--modal {
+  position: absolute;
+  right: 0;
+  top: 30px;
+  width: 7rem;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px 3px #eee;
+  background-color: white;
+  overflow: hidden;
+  padding: 0;
+}
+@media (min-width: 768px) {
+  .nav__menu .nav__menu--modal {
+    display: hidden;
+  }
+}
+.nav__menu .nav__menu--modal .nav--links {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+}
+.nav__menu .nav__menu--modal .nav--links > * {
+  width: 100%;
+  height: 100%;
+  padding: 10px 15px;
+  box-sizing: border-box;
+}
