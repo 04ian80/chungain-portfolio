@@ -1,0 +1,33 @@
+.nav__menu {
+  @include tablet-min {
+    display: none;
+  }
+  position: relative;
+  cursor: pointer;
+
+  .nav__menu--modal {
+    @include tablet-min {
+      display: hidden;
+    }
+    position: absolute;
+    right: 0;
+    top: 30px;
+    width: 7rem;
+    border-radius: 10px;
+    box-shadow: $secondary-box-shadow;
+    background-color: white;
+    overflow: hidden;
+    padding: 0;
+
+    .nav--links {
+      @include flexbox(flex, center, start);
+      flex-direction: column;
+      & > * {
+        width: 100%;
+        height: 100%;
+        padding: $secondary-inner-padding;
+        box-sizing: border-box;
+      }
+    }
+  }
+}
