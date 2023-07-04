@@ -1,7 +1,5 @@
-import './styles/styles.scss';
+import Main from './pages/Main';
+import './styles/css/styles.css';
 
-const App = () => {
-  return <div className='App'>App 😍</div>;
-};
-
+const App = () => <Main />;
 export default App;
