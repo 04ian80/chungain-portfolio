@@ -9,24 +9,29 @@
     'left-bottom left-bottom left-bottom right-bottom right-bottom';
   padding-top: $big-header-height;
   margin: 0 3rem;
+
   @include tablet-max {
     display: flex;
     flex-direction: column;
   }
 
   > :nth-child(1) {
+    @include fadein(0.2s);
     grid-area: left-top;
   }
 
-  > :nth-child(3) {
-    grid-area: left-bottom;
-  }
-
   > :nth-child(2) {
+    @include fadein(0.4s);
     grid-area: right-top;
   }
 
+  > :nth-child(3) {
+    @include fadein(0.6s);
+    grid-area: left-bottom;
+  }
+
   > :nth-child(4) {
+    @include fadein(0.8s);
     grid-area: right-bottom;
   }
 }
