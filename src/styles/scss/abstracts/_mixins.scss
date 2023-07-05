@@ -1,0 +1,78 @@
+@import './variables';
+
+// style
+@mixin flexbox($display: flex, $justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin padding($x: 10px, $y: 15px) {
+  padding: $x $y;
+}
+
+@mixin fadein($duration: 0.5s, $from: translateY(30px), $to: translateY(0)) {
+  @keyframes box-fadein {
+    0% {
+      opacity: 0;
+      transform: $from;
+    }
+    100% {
+      opacity: 1;
+      transform: $to;
+    }
+  }
+  animation: box-fadein $duration ease-in-out;
+}
+
+@mixin tag($color: $gray900, $bgColor: #eee) {
+  text-align: center;
+  padding: 5px 20px;
+  border-radius: $secondary-border-radius;
+  color: $color;
+  background-color: $bgColor;
+  font-weight: 600;
+}
+
+// media
+@mixin fold {
+  @media (max-width: #{$breakpoint-fold}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (min-width: #{$breakpoint-fold}) and (max-width: #{$breakpoint-mobile - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-max {
+  @media (max-width: #{$breakpoint-tablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-min {
+  @media (min-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+@mixin labtop {
+  @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-labtop - 1px}) {
+    @content;
+  }
+}
+
+@mixin labtop-max {
+  @media (max-width: #{$breakpoint-labtop}) {
+    @content;
+  }
+}

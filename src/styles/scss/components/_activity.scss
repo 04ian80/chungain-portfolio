@@ -1,0 +1,73 @@
+.activity {
+  @include fadein;
+  @include flexbox(flex, center, center);
+  @include tablet-max {
+    padding-top: $header-height;
+  }
+
+  flex-direction: column;
+  padding-top: $big-header-height;
+  font-size: 1.1rem;
+  margin: 0 15px;
+}
+
+.activity--inner {
+  @include flexbox(flex, center, start);
+  @include tablet-max {
+    font-size: 0.7rem;
+  }
+
+  @include tablet {
+    font-size: 0.8rem;
+  }
+
+  @include labtop {
+    font-size: 0.9rem;
+  }
+
+  flex-direction: column;
+  width: 80%;
+  padding: 1.3rem;
+  margin-bottom: 1.3rem;
+  border-radius: 20px;
+  box-shadow: $primary-box-shadow;
+  box-sizing: border-box;
+}
+
+.activity__title--container {
+  @include flexbox(flex, space-between, center);
+  @include tablet-max {
+    flex-direction: column;
+  }
+
+  width: 100%;
+}
+
+.activity__time {
+  @include tablet-max {
+    font-size: 0.7rem;
+  }
+
+  font-size: 0.8rem;
+  color: $gray500;
+}
+
+.activity__description {
+  display: block;
+  margin-top: 1.2rem;
+  color: $gray800;
+}
+
+.activity__links--list {
+  @include flexbox(flex, end, center);
+  padding: 0;
+  list-style: none;
+  flex-grow: 2;
+
+  > li {
+    margin-left: 6px;
+    > a {
+      color: gray;
+    }
+  }
+}

@@ -1,0 +1,77 @@
+@import '../abstracts/mixins';
+@import '../abstracts/variables';
+
+.header {
+  @include flexbox(flex, space-between, center);
+
+  position: fixed;
+  width: 100%;
+  padding: $primary-inner-padding;
+  background-color: white;
+  box-shadow: $primary-box-shadow;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.header__nav {
+  @include flexbox(flex, space-between, center);
+  flex-grow: 2;
+
+  .header__logo {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .nav__bar {
+    @include tablet-max {
+      display: none;
+    }
+
+    .nav__links {
+      > * {
+        height: 100%;
+        padding: $secondary-inner-padding;
+        border-radius: $priamry-border-radius;
+        box-sizing: border-box;
+      }
+
+      .nav--contact-list {
+        > *:not(:first-child) {
+          margin-left: 2rem;
+        }
+      }
+    }
+  }
+}
+
+.nav__links {
+  @include flexbox(flex, center, center);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+
+  > * {
+    &:hover:not(:last-child) {
+      cursor: pointer;
+      background-color: #eee;
+      & > * {
+        color: black;
+      }
+    }
+  }
+
+  .nav--contact-list {
+    @include flexbox(flex, space-between, center);
+    list-style: none;
+  }
+}
+
+.nav__links--link {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.link-active {
+  color: black;
+}
