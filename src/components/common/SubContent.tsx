@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import { AiOutlineClose } from 'react-icons/ai';
+
 import { introDatas } from '../../lib/data';
 import type { IntroData } from '../../lib/data';
-import { AiOutlineClose } from 'react-icons/ai';
 
 const SubContent = () => {
   const [selectedTitle, setSelectedTitle] = useState<string | null>(null);

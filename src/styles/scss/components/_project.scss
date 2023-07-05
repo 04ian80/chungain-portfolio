@@ -1,0 +1,88 @@
+.project {
+  position: relative;
+  border-radius: $priamry-border-radius;
+  padding: 20px;
+  margin: 0 20px;
+  background-color: white;
+  box-shadow: $primary-box-shadow;
+  box-sizing: border-box;
+  @include fadein(0.4s, 0, 0);
+
+  .project-image {
+    @include labtop-max {
+      display: none;
+    }
+
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border-radius: $priamry-border-radius;
+    box-shadow: $primary-box-shadow;
+    object-fit: cover;
+  }
+
+  .project--detail {
+    @include flexbox(flex, start, center);
+    @include tablet() {
+      flex-direction: column;
+
+      > * {
+        margin-bottom: 2rem;
+      }
+    }
+
+    > * {
+      margin-right: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    > time {
+      color: $gray500;
+      font-size: 0.8rem;
+    }
+  }
+
+  .project-description {
+    display: block;
+    padding: 1rem 5px;
+  }
+
+  .project-skills {
+    @include flexbox(flex, start, center);
+    flex-wrap: wrap;
+
+    > * {
+      margin: 0.6rem;
+      font-size: 0.8rem;
+    }
+  }
+
+  .project-career {
+    > strong {
+      display: block;
+      margin: 1rem 0 0.1rem 0;
+    }
+
+    > ul {
+      margin: 0;
+      padding: 0 1.4rem;
+    }
+  }
+
+  .project__link-icon {
+    display: flex;
+    align-self: center;
+  }
+
+  .tag-pink {
+    @include tag($gray800, rgb(255, 220, 226));
+  }
+
+  .tag-blue {
+    @include tag($gray800, rgb(202, 231, 255));
+  }
+
+  .tag-gray {
+    @include tag($gray800, #eee);
+  }
+}

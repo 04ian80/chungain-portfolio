@@ -41,8 +41,8 @@ const Activity = () => (
       <div className='activity__title--container'>
         <h2>{ACTIVITY_TITLE}</h2>
         <ul className='activity__links--list'>
-          {TASK_LINKS.map(({ link, name }) => (
-            <li className='activity__links--item'>
+          {TASK_LINKS.map(({ link, name }, idx) => (
+            <li key={idx} className='activity__links--item'>
               <a href={link} target='_blank' rel='noopenner noreferrer'>
                 {name}
               </a>

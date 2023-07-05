@@ -1,4 +1,5 @@
 import Header from './components/common/Header';
+import Project from './components/projects/Project';
 import Activity from './pages/Activity';
 import Introduction from './pages/Introduction';
 import Projects from './pages/Projects';
@@ -12,7 +13,9 @@ const App = () => (
     <Routes>
       <Route path='/' element={<Introduction />} />
       <Route path='/skills' element={<Skills />} />
-      <Route path='/projects' element={<Projects />} />
+      <Route path='/projects' element={<Projects />}>
+        <Route path=':id' element={<Project />} />
+      </Route>
       <Route path='/activity' element={<Activity />} />
     </Routes>
   </BrowserRouter>

@@ -1,6 +1,5 @@
-// icon.tsx
-import { IconSet } from '../../lib/constants';
 import type { iconName } from '../../lib/constants';
+import { IconSet } from '../../lib/constants';
 
 interface IconProps {
   icon: iconName;
