@@ -1,4 +1,5 @@
 .activity {
+  @include fadein;
   @include flexbox(flex, center, center);
   @include tablet-max {
     padding-top: $header-height;
@@ -7,18 +8,6 @@
   padding-top: $big-header-height;
   font-size: 1.1rem;
   margin: 0 15px;
-
-  @keyframes box-fadein {
-    0% {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  animation: box-fadein 0.5s ease-in-out;
 }
 
 .activity--inner {

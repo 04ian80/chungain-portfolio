@@ -11,6 +11,20 @@
   padding: $x $y;
 }
 
+@mixin fadein($duration: 0.5s) {
+  @keyframes box-fadein {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  animation: box-fadein $duration ease-in-out;
+}
+
 // media
 @mixin fold {
   @media (max-width: #{$breakpoint-fold}) {
