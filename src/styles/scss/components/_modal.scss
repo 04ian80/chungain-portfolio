@@ -1,3 +1,6 @@
+@import '../abstracts/mixins';
+@import '../abstracts/variables';
+
 .nav__menu {
   @include tablet-min {
     display: none;
@@ -19,7 +22,7 @@
     overflow: hidden;
     padding: 0;
 
-    .nav--links {
+    .nav__links {
       @include flexbox(flex, center, start);
       flex-direction: column;
       & > * {
