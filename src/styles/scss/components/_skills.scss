@@ -39,7 +39,7 @@
 .skillbox {
   padding: 2rem;
   margin: 2rem 1rem;
-  border-radius: 10px;
+  border-radius: $priamry-border-radius;
   box-shadow: $primary-box-shadow;
 
   > h3 {

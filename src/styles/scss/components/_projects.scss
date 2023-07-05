@@ -1,0 +1,27 @@
+.projects {
+  padding-top: $medium-header-height;
+}
+
+.projects__tablist {
+  display: flex;
+  list-style: none;
+
+  > li {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: rgba(0, 0, 0, 0.2);
+
+    &:not(:last-child) {
+      margin-right: 1.1rem;
+    }
+
+    > * {
+      text-decoration: none;
+      color: $gray500;
+    }
+  }
+
+  .tab-active {
+    color: black;
+  }
+}

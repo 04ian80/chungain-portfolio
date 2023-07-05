@@ -81,7 +81,7 @@
         transform: translate(-50%, -50%);
         height: auto;
         padding: 4rem;
-        border-radius: 10px;
+        border-radius: $priamry-border-radius;
         background-color: white;
         @include fadein(0.2s, 0, 0);
       }
