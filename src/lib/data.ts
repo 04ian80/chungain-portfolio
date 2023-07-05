@@ -116,3 +116,85 @@ export const introDatas: IntroData[] = [
     ],
   },
 ];
+
+export type ProjectDataType = {
+  name: string;
+  tags: string[];
+  time: string;
+  description: string;
+  skills: string[];
+  team: string;
+  career: { subtitle: string; subcontent: string[] }[];
+  link: string;
+};
+
+export const projectData: ProjectDataType[] = [
+  {
+    name: 'musteat',
+    tags: ['사이드 프로젝트', '팀 프로젝트'],
+    time: '2022.09 ~ 진행 중',
+    description: '맛집을 등록하고 후기를 일기 형식으로 작성하는 웹 서비스입니다.',
+    skills: ['TypeScript', 'Next.js', 'tailwindCSS', 'Axios', 'Kakao Map API'],
+    team: '백엔드 2명, 프론트엔드 1명 / 프론트엔드(기여도 100%), UI 디자인(기여도 100%)',
+    career: [
+      {
+        subtitle: '맛집 등록 및 일기 작성 서비스 개발',
+        subcontent: [
+          'Form Data를 활용하여 텍스트와 이미지 등 입력값과 파일 데이터를 서버와 주고받는 등록 서비스를 개발하였습니다.',
+          '맛집 등록 시 이미지를 10장까지 업로드할 수 있으며, 사용자가 업로드한 사 진을 자유롭게 추가하고 삭제할 수 있도록 선택한 사진에 대한 미리보기 기능 을 구현하였습니다.',
+        ],
+      },
+      {
+        subtitle: '주소를 찾을 때는 지도에서 편하게',
+        subcontent: [
+          '맛집 등록 시 필수로 맛집의 주소를 입력해야 합니다. 하지만 사용자가 주소 를 가져올 때 따로 검색해 봐야 하는 등 불편함이 있을 것을 고려하여, 지도상 에서 주소를 검색하고 좌표 클릭 시 바로 지번 주소 또는 도로명 주소를 가져 올 수 있도록 외부 지도 API를 활용하여 구현하였습니다.',
+        ],
+      },
+      {
+        subtitle: '심심하지 않은 UI',
+        subcontent: [
+          '웹 페이지 초기 랜딩 시 심심하지 않은 사용자 경험을 제공하기 위해 Framer-Motion으로 텍스트 애니메이션을 구현하였습니다. 모바일 사용자 에게 시각적 편리성을 제공하기 위해 반응형으로 구현하였습니다.',
+        ],
+      },
+    ],
+    link: 'https://github.com/2023-MUST-EAT/must-eat',
+  },
+  {
+    name: 'toodos',
+    tags: ['교육기관 프로젝트', '팀 프로젝트'],
+    time: '2023.05 ~ 2023.05(4일)',
+    description: '검색어 입력 시 키워드에 대한 추천 및 할 일을 추가할 수 있는 서비스입니다.',
+    skills: ['TypeScript', 'React', 'CSS', 'Axios'],
+    team: '프론트엔드 8명',
+    career: [
+      {
+        subtitle: 'TypeScript 마이그레이션 및 리팩토링 Best Practice로 선정',
+        subcontent: [
+          'TypeScript 마이그레이션 및 기존 구현 코드 리팩토링 부문에서 Best Practice로 선정되었습니다.',
+          '자바스크립트로 되어있던 코드를 타입스크립트로 마이그레이션 하는 작업을 진행하였습니다. Generic을 사용하여 변수 타입을 전달하거나, 자주 쓰이는 타입을 분리하여 재사용성을 높이는 작업을 진행하였습니다.',
+          '기존에 구현된 코드를 리팩토링하였습니다. util 함수 분리 및 CSS 속성 변수화, 속성 정렬 등 가독성을 위한 리팩토링을 위주로 진행하였습니다.',
+        ],
+      },
+    ],
+    link: 'https://github.com/pre-onboarding-team10/pre-onboarding-10th-4-10',
+  },
+  {
+    name: 'trial',
+    tags: ['교육기관 프로젝트', '팀 프로젝트'],
+    time: '2023.05 ~ 2023.05(4일)',
+    description: '임상실험에 대한 검색어를 추천해 주는 서비스입니다.',
+    skills: ['JavaScript', 'React', 'CSS', 'Axios'],
+    team: '프론트엔드 9명',
+    career: [
+      {
+        subtitle: 'UI 구현 Best Practice 선정',
+        subcontent: [
+          '요구사항을 충족하는 디테일한 UI 구현으로 해당 부문 Best Practice로 선정되었습니다.',
+          'UI/UX를 고려하여 스타일링 작업 시 반응형으로 작업하였습니다.',
+          'CSS 코드를 중시하여 자주 사용하는 속성에 대해 변수화하였고, CSS 파일을 따로 분리하여 보기 쉽게 하였습니다.',
+        ],
+      },
+    ],
+    link: 'https://github.com/pre-onboarding-team10/pre-onboarding-10th-2-10',
+  },
+];
