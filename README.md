@@ -24,13 +24,19 @@ React를 사용하여 만든 포트폴리오입니다.
 git clone https://github.com/04ian80/chungain-portfolio.git
 ```
 
-2. package들을 설치해줍니다.
+2. `chungain-portfolio`폴더로 이동해줍니다.
+
+```bash
+cd chungain-portfolio
+```
+
+3. package들을 설치해줍니다.
 
 ```bash
 npm install
 ```
 
-3. 아래 명령어를 실행하면 localhost:3000포트에서 실행이 됩니다.
+4. 아래 명령어를 실행하면 localhost:3000포트에서 실행이 됩니다.
 
 ```bash
 npm start
