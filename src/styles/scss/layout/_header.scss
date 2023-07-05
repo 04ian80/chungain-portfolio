@@ -10,6 +10,7 @@
   background-color: white;
   box-shadow: $primary-box-shadow;
   box-sizing: border-box;
+  z-index: 1;
 }
 
 .header__nav {
@@ -27,7 +28,7 @@
     }
 
     .nav__links {
-      & > * {
+      > * {
         height: 100%;
         padding: $secondary-inner-padding;
         border-radius: $priamry-border-radius;
@@ -35,7 +36,7 @@
       }
 
       .nav--contact-list {
-        & > *:not(:first-child) {
+        > *:not(:first-child) {
           margin-left: 2rem;
         }
       }
@@ -50,7 +51,7 @@
   margin: 0;
   height: 100%;
 
-  & > * {
+  > * {
     &:hover:not(:last-child) {
       cursor: pointer;
       background-color: #eee;
@@ -69,4 +70,8 @@
 .nav__links--link {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.5);
+}
+
+.link-active {
+  color: black;
 }

@@ -18,6 +18,9 @@ menu {
   padding: 0;
   margin: 0;
 }
+// abstracts
+@import './scss/abstracts/variables';
+@import './scss/abstracts/mixins';
 
 // layout
 @import './scss/layout/header';
@@ -28,7 +31,5 @@ menu {
 @import './scss/components/contents';
 @import './scss/components/skills';
 @import './scss/components/introduction';
-
-// abstracts
-@import './scss/abstracts/mixins';
-@import './scss/abstracts/variables';
+@import './scss/components/projects';
+@import './scss/components/project';

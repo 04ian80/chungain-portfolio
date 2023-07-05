@@ -26,11 +26,11 @@
   }
 
   .introduction__img {
+    @include fadein(0.3s, 0, 0);
     @include tablet {
       width: 150px;
       height: 150px;
     }
-    @include fadein(0.3s, 0, 0);
   }
 
   .introduction__contact {
@@ -75,6 +75,7 @@
       }
 
       .tab-bar__subcontent--inner {
+        @include fadein(0.2s, 0, 0);
         position: fixed;
         top: 50%;
         left: 50%;
@@ -83,7 +84,6 @@
         padding: 4rem;
         border-radius: $priamry-border-radius;
         background-color: white;
-        @include fadein(0.2s, 0, 0);
       }
 
       .close-modal__btn {
@@ -94,6 +94,7 @@
         right: 40px;
         top: 30px;
         cursor: pointer;
+
         &:hover {
           background-color: #e5e4e4;
         }
