@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
+
 import useToggle from '../../hooks/useToggle';
 import type { SVGType } from '../../lib/types';
 import GiHub from '../svg/GiHub';
 import Velog from '../svg/Velog';
-import { Link } from 'react-router-dom';
 
-export type NavLinksType = { navLinks: { title: string; link: string }[] };
+export type NavLinksType = { navLinks: { title: string; link: string; id: number }[] };
 
 const contactData = [
   { icon: 'github', color: '#181717', size: 24, link: 'https://github.com/04ian80' },
@@ -25,8 +26,8 @@ const ModalMenu = ({ navLinks }: NavLinksType) => {
   const [isModalOpen, handleToggleModal] = useToggle();
 
   return (
-    <section onClick={handleToggleModal} className='nav__menu'>
-      <AiOutlineMenu size='20' role='button' aria-label='메뉴 버튼' />
+    <section className='nav__menu'>
+      <AiOutlineMenu size='20' role='button' aria-label='메뉴 버튼' onClick={handleToggleModal} />
       {isModalOpen && (
         <menu aria-label='메뉴 모달' className='nav__menu--modal'>
           <Links navLinks={navLinks} />
@@ -37,14 +38,20 @@ const ModalMenu = ({ navLinks }: NavLinksType) => {
 };
 
 const Links = ({ navLinks }: NavLinksType) => {
+  const [isNavClicked, setIsNavClicked] = useState(navLinks[0].id);
   const IconMap = { github: GiHub, velog: Velog };
   const iconEl = (icon: keyof typeof IconMap, { color, size }: SVGType) =>
     React.createElement(IconMap[icon], { color, size });
 
   return (
     <ul className='nav__links'>
-      {navLinks.map(({ title, link }, id) => (
-        <Link to={link} className='nav__links--link'>
+      {navLinks.map(({ title, link, id }) => (
+        <Link
+          key={id}
+          to={link}
+          onClick={() => setIsNavClicked(id)}
+          className={`nav__links--link ${isNavClicked === id && `link-active`}`}
+        >
           <li key={id} aria-label={title}>
             {title}
           </li>
