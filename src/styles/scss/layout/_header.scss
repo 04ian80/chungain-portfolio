@@ -1,9 +1,15 @@
+@import '../abstracts/mixins';
+@import '../abstracts/variables';
+
 .header {
   @include flexbox(flex, space-between, center);
 
+  position: fixed;
+  width: 100%;
+  padding: $primary-inner-padding;
   background-color: white;
   box-shadow: $primary-box-shadow;
-  padding: $primary-inner-padding;
+  box-sizing: border-box;
 }
 
 .header__nav {
@@ -20,7 +26,7 @@
       display: none;
     }
 
-    .nav--links {
+    .nav__links {
       & > * {
         height: 100%;
         padding: $secondary-inner-padding;
@@ -37,7 +43,7 @@
   }
 }
 
-.nav--links {
+.nav__links {
   @include flexbox(flex, center, center);
   list-style: none;
   padding: 0;
@@ -48,6 +54,9 @@
     &:hover:not(:last-child) {
       cursor: pointer;
       background-color: #eee;
+      & > * {
+        color: black;
+      }
     }
   }
 
@@ -55,4 +64,9 @@
     @include flexbox(flex, space-between, center);
     list-style: none;
   }
+}
+
+.nav__links--link {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.5);
 }

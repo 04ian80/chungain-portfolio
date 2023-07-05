@@ -7,6 +7,10 @@
   align-items: $align;
 }
 
+@mixin padding($x: 10px, $y: 15px) {
+  padding: $x $y;
+}
+
 // media
 @mixin fold {
   @media (max-width: #{$breakpoint-fold}) {

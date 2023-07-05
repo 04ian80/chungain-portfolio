@@ -1,14 +1,19 @@
 import Menu from './Menu';
 
-const navLinks = ['소개', '기술스택', '프로젝트', '교육/활동'];
+const navLinks = [
+  { title: '소개', link: '/introduction' },
+  { title: '기술스택', link: '/skill' },
+  { title: '프로젝트', link: '/project' },
+  { title: '교육/활동', link: '/activity' },
+];
 const LOGO_TEXT = '종아인의 포트폴리오';
 
 const Logo = () => <h2 className='header__logo'>{LOGO_TEXT}</h2>;
 
 const NavLinks = () => (
   <Menu>
-    <Menu.ModalMenu links={navLinks} />
-    <Menu.NavLinkMenu links={navLinks} />
+    <Menu.ModalMenu navLinks={navLinks} />
+    <Menu.NavLinkMenu navLinks={navLinks} />
   </Menu>
 );
 

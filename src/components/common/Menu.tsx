@@ -4,8 +4,9 @@ import useToggle from '../../hooks/useToggle';
 import type { SVGType } from '../../lib/types';
 import GiHub from '../svg/GiHub';
 import Velog from '../svg/Velog';
+import { Link } from 'react-router-dom';
 
-export type NavLinksType = { links: string[] };
+export type NavLinksType = { navLinks: { title: string; link: string }[] };
 
 const contactData = [
   { icon: 'github', color: '#181717', size: 24, link: 'https://github.com/04ian80' },
@@ -14,13 +15,13 @@ const contactData = [
 
 const Menu = ({ children }: { children: React.ReactNode }) => <>{children}</>;
 
-const NavLinkMenu = ({ links }: NavLinksType) => (
+const NavLinkMenu = ({ navLinks }: NavLinksType) => (
   <menu className='nav__bar nav__bar--horizontal' aria-label='메뉴 바'>
-    <Links links={links} />
+    <Links navLinks={navLinks} />
   </menu>
 );
 
-const ModalMenu = ({ links }: NavLinksType) => {
+const ModalMenu = ({ navLinks }: NavLinksType) => {
   const [isModalOpen, handleToggleModal] = useToggle();
 
   return (
@@ -28,29 +29,36 @@ const ModalMenu = ({ links }: NavLinksType) => {
       <AiOutlineMenu size='20' role='button' aria-label='메뉴 버튼' />
       {isModalOpen && (
         <menu aria-label='메뉴 모달' className='nav__menu--modal'>
-          <Links links={links} />
+          <Links navLinks={navLinks} />
         </menu>
       )}
     </section>
   );
 };
 
-const Links = ({ links }: NavLinksType) => {
+const Links = ({ navLinks }: NavLinksType) => {
   const IconMap = { github: GiHub, velog: Velog };
   const iconEl = (icon: keyof typeof IconMap, { color, size }: SVGType) =>
     React.createElement(IconMap[icon], { color, size });
 
   return (
-    <ul className='nav--links'>
-      {links.map((link, id) => (
-        <li key={id} aria-label={link}>
-          {link}
-        </li>
+    <ul className='nav__links'>
+      {navLinks.map(({ title, link }, id) => (
+        <Link to={link} className='nav__links--link'>
+          <li key={id} aria-label={title}>
+            {title}
+          </li>
+        </Link>
       ))}
       <ul className='nav--contact-list'>
         {contactData.map(({ icon, color, size, link }) => (
           <li>
-            <a href={link} target='_blank' rel='noreferrer' aria-label={`${icon}으로 이동`}>
+            <a
+              href={link}
+              target='_blank'
+              rel='noopenner noreferrer'
+              aria-label={`${icon}으로 이동`}
+            >
               {iconEl(icon as keyof typeof IconMap, { color, size })}
             </a>
           </li>
