@@ -2,6 +2,9 @@
 
 React를 사용하여 만든 포트폴리오입니다.
 
+### 배포 링크
+[종아인의 포트폴리오](https://chungains-portfolio.netlify.app/)
+
 ### 사용스택
 
 - 언어: TypeScript
