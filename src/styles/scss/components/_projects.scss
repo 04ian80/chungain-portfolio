@@ -1,4 +1,8 @@
 .projects {
+  @include tablet-max {
+    padding-top: $header-height;
+    font-size: 0.8rem;
+  }
   padding-top: $medium-header-height;
 }
 
@@ -7,6 +11,10 @@
   list-style: none;
 
   > li {
+    @include tablet-max {
+      font-size: 0.9rem;
+    }
+
     font-weight: 700;
     font-size: 1.4rem;
     color: rgba(0, 0, 0, 0.2);
@@ -21,7 +29,7 @@
     }
   }
 
-  .tab-active {
-    color: black;
+  .nav-clicked {
+    border-bottom: 2px solid $gray800;
   }
 }

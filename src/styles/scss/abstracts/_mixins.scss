@@ -25,6 +25,15 @@
   animation: box-fadein $duration ease-in-out;
 }
 
+@mixin tag($color: $gray900, $bgColor: #eee) {
+  text-align: center;
+  padding: 5px 20px;
+  border-radius: $secondary-border-radius;
+  color: $color;
+  background-color: $bgColor;
+  font-weight: 600;
+}
+
 // media
 @mixin fold {
   @media (max-width: #{$breakpoint-fold}) {
@@ -62,13 +71,7 @@
   }
 }
 
-@mixin desktop {
-  @media (min-width: #{$breakpoint-labtop}) {
-    @content;
-  }
-}
-
-@mixin desktop-max {
+@mixin labtop-max {
   @media (max-width: #{$breakpoint-labtop}) {
     @content;
   }
