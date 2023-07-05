@@ -224,3 +224,64 @@ menu {
 .contents > ul > li {
   margin: 1.2rem 0;
 }
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: 'left-top left-top left-top right-top right-top' 'left-bottom left-bottom left-bottom right-bottom right-bottom';
+  padding-top: 8rem;
+  margin: 0 3rem;
+}
+@media (max-width: 767px) {
+  .skills {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.skills > :nth-child(1) {
+  grid-area: left-top;
+}
+.skills > :nth-child(3) {
+  grid-area: left-bottom;
+}
+.skills > :nth-child(2) {
+  grid-area: right-top;
+}
+.skills > :nth-child(4) {
+  grid-area: right-bottom;
+}
+
+.skillbox {
+  padding: 2rem;
+  margin: 2rem 1rem;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px 5px #eee;
+}
+.skillbox > h3 {
+  display: block;
+  margin: 0;
+  margin-bottom: 1.6rem;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 600;
+}
+
+.icon__container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.icon__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.icon__item > * {
+  font-size: 40px;
+  text-align: center;
+}
+.icon__item > :last-child {
+  font-size: 0.7rem;
+}
