@@ -1,10 +1,10 @@
 import Menu from './Menu';
 
 const navLinks = [
-  { title: '소개', link: '/' },
-  { title: '기술스택', link: '/skills' },
-  { title: '프로젝트', link: '/project' },
-  { title: '교육/활동', link: '/activity' },
+  { id: 0, title: '소개', link: '/' },
+  { id: 1, title: '기술스택', link: '/skills' },
+  { id: 2, title: '프로젝트', link: '/projects/musteat' },
+  { id: 3, title: '교육/활동', link: '/activity' },
 ];
 const LOGO_TEXT = '종아인의 포트폴리오';
 

@@ -5,13 +5,11 @@ type ContentsType = {
   children: React.ReactNode;
 };
 
-const Contents = ({ title, children }: ContentsType) => {
-  return (
-    <section className='contents'>
-      <h3 className='contents__heading'>{title}</h3>
-      {children}
-    </section>
-  );
-};
+const Contents = ({ title, children }: ContentsType) => (
+  <section className='contents'>
+    <h3 className='contents__heading'>{title}</h3>
+    {children}
+  </section>
+);
 
 export default Contents;
