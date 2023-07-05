@@ -11,15 +11,15 @@
   padding: $x $y;
 }
 
-@mixin fadein($duration: 0.5s) {
+@mixin fadein($duration: 0.5s, $from: translateY(30px), $to: translateY(0)) {
   @keyframes box-fadein {
     0% {
       opacity: 0;
-      transform: translateY(30px);
+      transform: $from;
     }
     100% {
       opacity: 1;
-      transform: translateY(0);
+      transform: $to;
     }
   }
   animation: box-fadein $duration ease-in-out;
