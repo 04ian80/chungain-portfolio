@@ -2,7 +2,7 @@ import Menu from './Menu';
 
 const navLinks = [
   { title: '소개', link: '/introduction' },
-  { title: '기술스택', link: '/skill' },
+  { title: '기술스택', link: '/skills' },
   { title: '프로젝트', link: '/project' },
   { title: '교육/활동', link: '/activity' },
 ];
