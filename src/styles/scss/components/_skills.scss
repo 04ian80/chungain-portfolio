@@ -9,6 +9,7 @@
     'left-bottom left-bottom left-bottom right-bottom right-bottom';
   padding-top: $big-header-height;
   margin: 0 3rem;
+
   @include tablet-max {
     display: flex;
     flex-direction: column;

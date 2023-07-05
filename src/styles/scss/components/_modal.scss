@@ -5,6 +5,7 @@
   @include tablet-min {
     display: none;
   }
+
   position: relative;
   cursor: pointer;
 
@@ -12,6 +13,7 @@
     @include tablet-min {
       display: hidden;
     }
+
     position: absolute;
     right: 0;
     top: 30px;
@@ -25,7 +27,8 @@
     .nav__links {
       @include flexbox(flex, center, start);
       flex-direction: column;
-      & > * {
+
+      > * {
         width: 100%;
         height: 100%;
         padding: $secondary-inner-padding;
