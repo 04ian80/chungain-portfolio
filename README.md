@@ -3,7 +3,7 @@
 React를 사용하여 만든 포트폴리오입니다.
 
 ### 배포 링크
-[종아인의 포트폴리오](https://chungains-portfolio.netlify.app/)
+netlify에서 AWS로 재배포하기 위한 작업을 진행하고 있습니다.
 
 ### 사용스택
 
