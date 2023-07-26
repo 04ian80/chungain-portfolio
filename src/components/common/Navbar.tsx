@@ -6,7 +6,7 @@ const navLinks = [
   { id: 2, title: '프로젝트', link: '/projects/musteat' },
   { id: 3, title: '교육/활동', link: '/activity' },
 ];
-const LOGO_TEXT = '종아인 포트폴리오';
+const LOGO_TEXT = '종아인의 포트폴리오';
 
 const Logo = () => <h2 className='header__logo'>{LOGO_TEXT}</h2>;
 
