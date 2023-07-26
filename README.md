@@ -6,6 +6,9 @@ React를 사용하여 만든 포트폴리오입니다.
 
 [종아인의 포트폴리오](http://04ian80-chungain.s3-website.ap-northeast-2.amazonaws.com/)
 
+- AWS S3로 배포한 후, GitHub Action으로 배포 자동화를 구축하였습니다.
+- 비용 문제로 한달 간 AWS 임시 배포 후 Netlify로 변경할 예정입니다. (~8월 26일)
+
 ### 사용스택
 
 - 언어: TypeScript
