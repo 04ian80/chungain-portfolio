@@ -2,13 +2,10 @@
 
 React를 사용하여 만든 포트폴리오입니다.
 
-<<<<<<< Updated upstream
-=======
 ### 배포 링크
 
-netlify에서 AWS로 재배포하기 위한 작업을 진행하고 있습니다.
+[종아인의 포트폴리오](http://04ian80-chungain.s3-website.ap-northeast-2.amazonaws.com/)
 
->>>>>>> Stashed changes
 ### 사용스택
 
 - 언어: TypeScript
