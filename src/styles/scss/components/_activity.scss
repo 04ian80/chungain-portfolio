@@ -12,7 +12,7 @@
 }
 
 .activity--inner {
-  @include flexbox(flex, center, start);
+  @include flexbox(flex, center, flex-start);
   @include tablet-max {
     font-size: 0.7rem;
   }

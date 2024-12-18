@@ -1,4 +1,5 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css');
+@import url('https://cdn.jsdelivr.net/gh/toss/tossface/dist/tossface.css');
 
 body {
   font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue',
@@ -10,14 +11,24 @@ body {
 }
 
 h2 {
-  font-weight: 600;
+  // font-weight: 600;
   margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  background-color: unset;
+  border: none;
 }
 
 menu {
   padding: 0;
   margin: 0;
 }
+
 // abstracts
 @import './scss/abstracts/variables';
 @import './scss/abstracts/mixins';
@@ -33,3 +44,4 @@ menu {
 @import './scss/components/introduction';
 @import './scss/components/projects';
 @import './scss/components/project';
+@import './scss/components/common';

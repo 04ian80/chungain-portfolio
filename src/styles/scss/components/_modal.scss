@@ -25,7 +25,7 @@
     padding: 0;
 
     .nav__links {
-      @include flexbox(flex, center, start);
+      @include flexbox(flex, center, flex-start);
       flex-direction: column;
 
       > * {

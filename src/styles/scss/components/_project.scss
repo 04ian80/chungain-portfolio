@@ -22,7 +22,7 @@
   }
 
   .project--detail {
-    @include flexbox(flex, start, center);
+    @include flexbox(flex, flex-start, center);
     @include tablet() {
       flex-direction: column;
 
@@ -48,7 +48,7 @@
   }
 
   .project-skills {
-    @include flexbox(flex, start, center);
+    @include flexbox(flex, flex-start, center);
     flex-wrap: wrap;
 
     > * {

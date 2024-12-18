@@ -1,6 +1,9 @@
 export type IntroData = {
   id: number;
   title: string;
+  subTitle: string;
+  color: 'lightPink' | 'skyblue' | 'green' | 'orange';
+  icon: string;
   content: {
     subtitle?: string;
     subcontent: string;
@@ -9,6 +12,10 @@ export type IntroData = {
 export const introDatas: IntroData[] = [
   {
     id: 0,
+    color: 'lightPink',
+    subTitle: `개발자를 어떻게 시작하게 되었는지
+풀어보았어요.`,
+    icon: '👩🏻‍💻',
     title: '프론트엔드 입문 과정',
     content: [
       {
@@ -39,6 +46,9 @@ export const introDatas: IntroData[] = [
   },
   {
     id: 1,
+    color: 'skyblue',
+    subTitle: '',
+    icon: '💬',
     title: '커뮤니케이션 습관화',
     content: [
       {
@@ -76,6 +86,9 @@ export const introDatas: IntroData[] = [
   },
   {
     id: 2,
+    color: 'orange',
+    subTitle: '',
+    icon: '⚡️',
     title: '상위 10%를 향한 목표',
     content: [
       {
@@ -103,6 +116,9 @@ export const introDatas: IntroData[] = [
   },
   {
     id: 3,
+    color: 'green',
+    subTitle: '',
+    icon: '🔊',
     title: '공유 문화 선호',
     content: [
       {
