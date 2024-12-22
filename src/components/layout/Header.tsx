@@ -38,10 +38,15 @@ const Header = () => {
 };
 
 const Wrapper = styled.header`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 28px 20px;
+  background-color: white;
 `;
 
 const Heading1 = styled.h1`

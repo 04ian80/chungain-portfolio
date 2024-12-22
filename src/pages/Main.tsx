@@ -1,5 +1,5 @@
-import React from 'react';
+import Layout from '../components/layout';
 
-const Main = () => <div>Main</div>;
+const MainPage = () => <Layout />;
 
-export default Main;
+export default MainPage;
