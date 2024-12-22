@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
 
 import useToggle from '../../hooks/useToggle';
 import type { SVGType } from '../../lib/types';
@@ -38,25 +37,12 @@ const ModalMenu = ({ navLinks }: NavLinksType) => {
 };
 
 const Links = ({ navLinks }: NavLinksType) => {
-  const [isNavClicked, setIsNavClicked] = useState(navLinks[0].id);
   const IconMap = { github: GiHub, velog: Velog };
   const iconEl = (icon: keyof typeof IconMap, { color, size }: SVGType) =>
     React.createElement(IconMap[icon], { color, size });
 
   return (
     <ul className='nav__links'>
-      {navLinks.map(({ title, link, id }) => (
-        <Link
-          key={id}
-          to={link}
-          onClick={() => setIsNavClicked(id)}
-          className={`nav__links--link ${isNavClicked === id && `link-active`}`}
-        >
-          <li key={id} aria-label={title}>
-            {title}
-          </li>
-        </Link>
-      ))}
       <ul className='nav--contact-list'>
         {contactData.map(({ icon, color, size, link }) => (
           <li>
