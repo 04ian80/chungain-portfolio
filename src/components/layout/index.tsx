@@ -19,7 +19,7 @@ const Layout = () => {
   };
   return (
     <Container>
-      <Screen>
+      <Screen $fitContent>
         <Main onScrollNextView={handleClickScrollBtn} />
       </Screen>
       <Screen ref={scrollRef}>

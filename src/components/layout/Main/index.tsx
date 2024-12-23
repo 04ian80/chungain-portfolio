@@ -19,7 +19,8 @@ const Container = styled.article`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: calc(100% - 130px);
+  min-height: calc(100vh - 130px);
+  height: 100%;
   border-radius: 16px;
   box-shadow: 0 5px 18px -2px rgba(0, 0, 0, 0.1);
   margin-top: 95px;
@@ -32,6 +33,7 @@ const Wrapper = styled.div`
   justify-content: center;
   gap: 80px;
   height: 100%;
+  margin: auto 0;
 `;
 const AiOutlineDown = styled(_AiOutlineDown)`
   width: 40px;
