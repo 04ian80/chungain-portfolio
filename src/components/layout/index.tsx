@@ -22,7 +22,7 @@ const Layout = () => {
       <Screen $fitContent>
         <Main onScrollNextView={handleClickScrollBtn} />
       </Screen>
-      <Screen ref={scrollRef}>
+      <Screen ref={scrollRef} $fitContent>
         <Skills />
       </Screen>
     </Container>
@@ -31,6 +31,10 @@ const Layout = () => {
 
 const Container = styled.main`
   padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-bottom: 20px;
 `;
 const Screen = styled.section<{ $fitContent?: boolean }>`
   height: ${({ $fitContent }) => ($fitContent ? 'fit-content' : '100vh')};

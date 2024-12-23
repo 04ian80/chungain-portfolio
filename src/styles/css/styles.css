@@ -1,5 +1,11 @@
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css");
-@import url("https://cdn.jsdelivr.net/gh/toss/tossface/dist/tossface.css");
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css');
+@import url('https://cdn.jsdelivr.net/gh/toss/tossface/dist/tossface.css');
+
+@font-face {
+  font-family: D2Coding;
+  src: url('../../../public/fonts/D2Coding.ttf') format('ttf');
+}
+
 body {
   font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Symbol", sans-serif;
   -webkit-font-smoothing: antialiased;
