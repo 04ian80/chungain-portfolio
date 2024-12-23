@@ -18,7 +18,13 @@ const Container = styled.article`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: calc(100% - 85px);
+  justify-content: center;
+  height: calc(100% - 130px);
+  border-radius: 16px;
+  box-shadow: 0 5px 18px -2px rgba(0, 0, 0, 0.1);
+  margin-top: 95px;
+  padding-bottom: 40px;
+  box-sizing: border-box;
 `;
 const Wrapper = styled.div`
   display: flex;
@@ -26,25 +32,30 @@ const Wrapper = styled.div`
   justify-content: center;
   gap: 80px;
   height: 100%;
-  padding-top: 85px;
 `;
 const AiOutlineDown = styled(_AiOutlineDown)`
   width: 40px;
   height: 40px;
   color: ${COLOR.gray800};
   cursor: pointer;
+  opacity: 0;
   animation-name: updown;
   animation-duration: 1.4s;
+  animation-delay: 1.4s;
   animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
 
   @keyframes updown {
     0% {
+      opacity: 1;
       transform: translateY(10px);
     }
     50% {
+      opacity: 1;
       transform: translateY(0);
     }
     100% {
+      opacity: 1;
       transform: translateY(10px);
     }
   }

@@ -20,8 +20,8 @@ const Header = () => {
     <Wrapper>
       <Heading1>{LOGO_TEXT}</Heading1>
       <UL>
-        {contactData.map(({ icon, color, size, link }) => (
-          <li>
+        {contactData.map(({ icon, color, size, link }, idx) => (
+          <li key={idx}>
             <a
               href={link}
               target='_blank'

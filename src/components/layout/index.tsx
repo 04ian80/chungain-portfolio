@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
 import Main from './Main';
+import Skills from './Skills';
 
 const Layout = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -9,25 +10,28 @@ const Layout = () => {
     const timer = setTimeout(() => {
       scrollRef?.current?.scrollIntoView({
         behavior: 'smooth',
-        block: 'end',
-        inline: 'end',
+        block: 'start',
+        inline: 'start',
       });
     }, 100);
 
     return () => clearTimeout(timer);
   };
   return (
-    <main>
+    <Container>
       <Screen>
         <Main onScrollNextView={handleClickScrollBtn} />
       </Screen>
       <Screen ref={scrollRef}>
-        <Main onScrollNextView={handleClickScrollBtn} />
+        <Skills />
       </Screen>
-    </main>
+    </Container>
   );
 };
 
+const Container = styled.main`
+  padding: 0 20px;
+`;
 const Screen = styled.section<{ $fitContent?: boolean }>`
   height: ${({ $fitContent }) => ($fitContent ? 'fit-content' : '100vh')};
 `;
