@@ -37,15 +37,14 @@ const Wrapper = styled.div`
   width: 0;
   height: 40px;
   overflow: hidden;
-
-  animation: scale-out 1.2s 1.8s forwards, move-in 1.2s 0.6s forwards;
+  animation: scale-out 1.4s 1.4s forwards, move-in 1.2s 0.6s forwards;
 
   @keyframes scale-out {
     0% {
       height: 40px;
     }
     100% {
-      height: 50%;
+      height: 380px;
     }
   }
   @keyframes move-in {
@@ -77,11 +76,9 @@ const P = styled.p`
 
   @keyframes typing {
     from {
-      /* opacity: 1; */
       width: 0;
     }
     to {
-      /* opacity: 1; */
       width: 100%;
     }
   }

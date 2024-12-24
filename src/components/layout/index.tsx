@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import styled from 'styled-components';
 import Main from './Main';
 import Skills from './Skills';
+import Career from './Career';
 
 const Layout = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -25,6 +26,10 @@ const Layout = () => {
       <Screen ref={scrollRef} $fitContent>
         <Skills />
       </Screen>
+      <Heading1>경력</Heading1>
+      <Screen $fitContent>
+        <Career />
+      </Screen>
     </Container>
   );
 };
@@ -38,5 +43,9 @@ const Container = styled.main`
 `;
 const Screen = styled.section<{ $fitContent?: boolean }>`
   height: ${({ $fitContent }) => ($fitContent ? 'fit-content' : '100vh')};
+`;
+const Heading1 = styled.h1`
+  font-size: 44px;
+  padding: 0 56px;
 `;
 export default Layout;

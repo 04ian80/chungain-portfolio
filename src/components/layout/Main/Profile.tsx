@@ -77,7 +77,7 @@ const DD = styled.dd`
 const Bar = styled.div`
   width: 1px;
   height: 130px;
-  background-color: ${COLOR.gray500};
+  background-color: ${COLOR.gray400};
 `;
 
 export default Profile;
