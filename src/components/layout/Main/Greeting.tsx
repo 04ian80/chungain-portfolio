@@ -1,5 +1,5 @@
-import React from 'react';
 import styled from 'styled-components';
+import { breakpoints } from '../../../lib/media';
 
 const contents = [
   { icon: '🔥', text: '열띈 토론으로 이어지는 코드리뷰를 좋아합니다.' },
@@ -36,8 +36,25 @@ const Wrapper = styled.div`
   border-radius: 16px;
   width: 0;
   height: 40px;
-  overflow: hidden;
   animation: scale-out 1.4s 1.4s forwards, move-in 1.2s 0.6s forwards;
+  font-size: 32px;
+
+  @media (max-width: ${breakpoints.wide}) {
+    gap: 8px;
+    font-size: 24px;
+  }
+  @media (max-width: ${breakpoints.desktop}) {
+    gap: 8px;
+    font-size: 20px;
+  }
+  @media (max-width: ${breakpoints.tablet}) {
+    gap: 4px;
+    font-size: 18px;
+  }
+  @media (max-width: ${breakpoints.mobile}) {
+    gap: 2px;
+    font-size: 14px;
+  }
 
   @keyframes scale-out {
     0% {
@@ -52,12 +69,12 @@ const Wrapper = styled.div`
       width: 0;
     }
     100% {
-      width: 100%;
+      width: 90%;
     }
   }
 `;
-const Title32 = styled.p`
-  font-size: 32px;
+const Title32 = styled.div`
+  font-size: 1em;
   font-weight: 500;
 
   & > b {
@@ -89,20 +106,27 @@ const UL = styled.ul`
   gap: 16px;
   list-style: none;
   padding: 0;
+  @media (max-width: ${breakpoints.desktop}) {
+    gap: 8px;
+  }
+  @media (max-width: ${breakpoints.tablet}) {
+    gap: 4px;
+  }
 `;
 const Row = styled.li<{ $index: number }>`
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 24px;
-  white-space: pre;
+  font-size: 0.8em;
+  word-break: keep-all;
+  white-space: pre-line;
   opacity: 0;
   animation-fill-mode: forwards;
   animation-name: fade-in;
   animation-duration: 0.4s;
   animation-delay: ${({ $index }) => `2.${$index}s`};
   p:first-child {
-    font-size: 40px;
+    font-size: 1.6em;
     font-family: Tossface;
   }
 
@@ -110,8 +134,6 @@ const Row = styled.li<{ $index: number }>`
     0% {
       opacity: 0;
       transform: translateY(10px);
-    }
-    1% {
     }
     100% {
       opacity: 1;

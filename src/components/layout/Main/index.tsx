@@ -3,6 +3,7 @@ import Profile from './Profile';
 import Greeting from './Greeting';
 import { AiOutlineDown as _AiOutlineDown } from 'react-icons/ai';
 import { COLOR } from '../../../lib/color';
+import { breakpoints } from '../../../lib/media';
 
 const Main = ({ onScrollNextView }: { onScrollNextView: () => void }) => (
   <Container>
@@ -24,7 +25,7 @@ const Container = styled.article`
   border-radius: 16px;
   box-shadow: 0 5px 18px -2px rgba(0, 0, 0, 0.1);
   margin-top: 95px;
-  padding-bottom: 40px;
+  padding-block: 40px;
   box-sizing: border-box;
 `;
 const Wrapper = styled.div`
@@ -34,6 +35,10 @@ const Wrapper = styled.div`
   gap: 80px;
   height: 100%;
   margin: auto 0;
+
+  @media (max-width: ${breakpoints.wide}) {
+    flex-direction: column;
+  }
 `;
 const AiOutlineDown = styled(_AiOutlineDown)`
   width: 40px;

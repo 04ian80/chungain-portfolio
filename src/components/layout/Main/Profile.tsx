@@ -1,6 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
 import { COLOR } from '../../../lib/color';
+import { breakpoints } from '../../../lib/media';
 
 const contactData = [
   { href: 'mailto:devain2211@gmail.com', title: 'Email', text: 'devain2211@gmail.com' },
@@ -42,15 +42,26 @@ const Profile = () => (
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 28px;
 `;
 const Image = styled.img`
   width: 200px;
   height: 200px;
+
+  @media (max-width: ${breakpoints.desktop}) {
+    width: 100px;
+    height: 100px;
+  }
 `;
 const Contact = styled.div`
   display: flex;
   gap: 8px;
+  font-size: 18px;
+
+  @media (max-width: ${breakpoints.desktop}) {
+    font-size: 14px;
+  }
 `;
 const DL = styled.dl`
   display: flex;

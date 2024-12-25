@@ -1,8 +1,8 @@
 export const breakpoints = {
-  xmobile: 320,
-  mobile: 500,
-  tablet: 768,
-  desktop: 1024,
-  wide: 1200,
-  xwide: 1440,
+  xmobile: '320px',
+  mobile: '500px',
+  tablet: '768px',
+  desktop: '1024px',
+  wide: '1200px',
+  xwide: '1440px',
 } as const;
