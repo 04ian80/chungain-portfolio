@@ -7,7 +7,9 @@
 }
 
 body {
-  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Symbol", sans-serif;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue',
+    'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji',
+    'Segoe UI Symbol', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
@@ -247,7 +249,7 @@ menu {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-template-areas: "left-top left-top left-top right-top right-top" "left-bottom left-bottom left-bottom right-bottom right-bottom";
+  grid-template-areas: 'left-top left-top left-top right-top right-top' 'left-bottom left-bottom left-bottom right-bottom right-bottom';
   padding-top: 8rem;
   margin: 0 3rem;
 }
@@ -618,7 +620,7 @@ menu {
   border-radius: 10px;
   box-shadow: 1px 1px 10px 5px #eee;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 @media (max-width: 1024px) {
   .project .project-image {
