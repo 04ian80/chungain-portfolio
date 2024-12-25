@@ -1,8 +1,9 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import styled from 'styled-components';
+import Career from './Career';
+import Introduction from './Introduction';
 import Main from './Main';
 import Skills from './Skills';
-import Career from './Career';
 
 const Layout = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -29,6 +30,10 @@ const Layout = () => {
       <Heading1>경력</Heading1>
       <Screen $fitContent>
         <Career />
+      </Screen>
+      <Heading1>소개</Heading1>
+      <Screen $fitContent>
+        <Introduction />
       </Screen>
     </Container>
   );
