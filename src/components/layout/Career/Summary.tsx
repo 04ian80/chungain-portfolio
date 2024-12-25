@@ -49,10 +49,9 @@ const Summary = () => (
 
 const UL = styled.ul`
   margin: 0;
-  font-size: 18px;
-
+  font-size: 0.6em;
   li {
-    line-height: 32px;
+    line-height: 1.6em;
   }
 `;
 const Highlight = styled.span`

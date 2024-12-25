@@ -3,6 +3,7 @@ import GiHub from '../svg/GiHub';
 import Velog from '../svg/Velog';
 import React from 'react';
 import type { SVGType } from '../../lib/types';
+import { breakpoints } from '../../lib/media';
 
 const LOGO_TEXT = '종아인의 포트폴리오';
 
@@ -52,10 +53,14 @@ const Wrapper = styled.header`
   border: 1px solid rgba(255, 255, 255, 0.3);
   -webkit-backdrop-filter: blur(5px);
   z-index: 1;
+  font-size: 24px;
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 18px;
+  }
 `;
 
 const Heading1 = styled.h1`
-  font-size: 24px;
+  font-size: 1em;
   margin: 0;
 `;
 

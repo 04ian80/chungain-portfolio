@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { COLOR } from '../../../lib/color';
+import { breakpoints } from '../../../lib/media';
 
 const Timeline = () => (
   <Flex>
@@ -66,23 +67,27 @@ const Timeline = () => (
     </Contents>
     <Images>
       <Thumbnail>
-        <img
+        <Img
           src='/image/main/vietnam-thumbnail.png'
-          width={280}
-          height={210}
+          // width={280}
+          // height={210}
           alt='베트남에서 실무진 교육 이미지'
         />
         <Caption>봉제공장에서 실무진에게 교육 진행</Caption>
       </Thumbnail>
       <Thumbnail>
-        <img src='/image/main/mvp-thumbnail.png' width={280} height={210} alt='우수사원상 이미지' />
+        <Img
+          src='/image/main/mvp-thumbnail.png'
+          //  width={280} height={210}
+          alt='우수사원상 이미지'
+        />
         <Caption>우수사원상 수상</Caption>
       </Thumbnail>
       <Thumbnail>
-        <img
+        <Img
           src='/image/main/china-thumbnail.png'
-          width={280}
-          height={210}
+          // width={280}
+          // height={210}
           alt='중국 박람회 참여 이미지'
         />
         <Caption>박람회에서 참관객에게 프로그램 시연</Caption>
@@ -94,21 +99,31 @@ const Timeline = () => (
 const Flex = styled.div`
   display: flex;
   gap: 24px;
+  line-height: 40px;
+  @media (max-width: ${breakpoints.wide}) {
+    flex-direction: column-reverse;
+  }
+  @media (max-width: ${breakpoints.tablet}) {
+    line-height: 20px;
+  }
 `;
 const Row = styled.div`
   display: flex;
   align-items: flex-start;
-  font-size: 18px;
-  line-height: 32px;
+  font-size: 0.5em;
+  line-height: 1.6em;
   font-weight: 500;
   div {
     display: flex;
-    min-width: 100px;
+    min-width: 18%;
     color: ${COLOR.gray800};
   }
   ul {
     margin: 0;
     color: ${COLOR.gray950};
+  }
+  @media (max-width: ${breakpoints.tablet}) {
+    flex-direction: column;
   }
 `;
 const Contents = styled.div`
@@ -117,20 +132,27 @@ const Contents = styled.div`
   gap: 12px;
 `;
 const Images = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 0px 10%;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(auto-fill, 200px));
+  column-gap: 0.2em;
+
+  @media (max-width: ${breakpoints.wide}) {
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+  }
 `;
 const Thumbnail = styled.div`
   display: flex;
   flex-direction: column;
+  flex-basis: 100px;
   gap: 8px;
 `;
+const Img = styled.img`
+  object-fit: cover;
+`;
 const Caption = styled.p`
-  font-size: 16px;
-  color: ${COLOR.gray700};
-  line-height: 30px;
+  font-size: 0.4em;
+  color: ${COLOR.gray800};
+  line-height: 1.2em;
 `;
 
 export default Timeline;

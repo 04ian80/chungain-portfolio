@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { COLOR } from '../../../lib/color';
 import Summary from './Summary';
 import Timeline from './Timeline';
+import { breakpoints } from '../../../lib/media';
 
 const Career = () => (
   <Wrapper>
@@ -30,17 +31,28 @@ const Wrapper = styled.article`
   gap: 16px;
   padding: 40px 56px;
   box-shadow: 0 5px 18px -2px rgba(0, 0, 0, 0.1);
+  font-size: 32px;
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 24px;
+    padding: 5px;
+  }
 `;
 const Header = styled.div`
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 12px;
 `;
 const Title = styled.h2`
-  font-size: 36px;
+  font-size: 1em;
+  /* font-size: 32px; */
+  /* @media (max-width: ${breakpoints.tablet}) {
+    font-size: 24px;
+  } */
 `;
 const P = styled.p`
-  font-size: 20px;
+  /* font-size: 20px; */
+  font-size: 0.6em;
   color: ${COLOR.gray800};
   font-weight: 500;
 `;
@@ -48,7 +60,8 @@ const Badge = styled.div`
   padding: 4px 12px;
   border-radius: 24px;
   background-color: ${COLOR.gray100};
-  font-size: 16px;
+  /* font-size: 16px; */
+  font-size: 0.5em;
   line-height: 30px;
 `;
 const Divider = styled.div`
@@ -67,6 +80,7 @@ const SubTitle = styled.h3`
   margin: 0;
   font-size: 28px;
   color: ${COLOR.gray900};
+  font-size: 0.8em;
 `;
 
 export default Career;

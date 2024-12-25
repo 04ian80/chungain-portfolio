@@ -55,6 +55,7 @@ const Heading1 = styled.h1`
   padding: 0 56px;
 
   @media (max-width: ${breakpoints.tablet}) {
+    padding: 0 32px;
     font-size: 24px;
   }
 `;
