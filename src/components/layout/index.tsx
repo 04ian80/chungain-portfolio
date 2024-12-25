@@ -4,6 +4,7 @@ import Career from './Career';
 import Introduction from './Introduction';
 import Main from './Main';
 import Skills from './Skills';
+import { breakpoints } from '../../lib/media';
 
 const Layout = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -52,5 +53,9 @@ const Screen = styled.section<{ $fitContent?: boolean }>`
 const Heading1 = styled.h1`
   font-size: 44px;
   padding: 0 56px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 24px;
+  }
 `;
 export default Layout;

@@ -10,6 +10,7 @@ import IconSass from '../../svg/IconSass';
 import IconGitHub from '../../svg/GiHub';
 import IconJira from '../../svg/IconJira';
 import IconConfluence from '../../svg/IconConfluence';
+import { breakpoints } from '../../../lib/media';
 
 const Skills = () => (
   <Wrapper>
@@ -25,7 +26,8 @@ const Skills = () => (
         TypeScript
       </Badge>
       <Badge>
-        <IconReact />t React
+        <IconReact />
+        React
       </Badge>
       <Badge>
         <IconTanstackQuery />
@@ -71,14 +73,21 @@ const Wrapper = styled.div`
 `;
 const Title = styled.h2`
   font-size: 28px;
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 18px;
+  }
 `;
 const Heading3 = styled.h3`
   font-size: 18px;
   font-weight: 600;
   margin: 0;
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 14px;
+  }
 `;
 const Grid = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 18px;
   width: fit-content;
 `;
@@ -91,6 +100,18 @@ const Badge = styled.div`
   border-radius: 8px;
   background-color: #eee;
   font-family: D2Coding;
+  font-size: 16px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    border-radius: 4px;
+    padding: 4px;
+    font-size: 12px;
+  }
+
+  svg {
+    width: 12px;
+    height: 12px;
+  }
 `;
 
 export default Skills;
