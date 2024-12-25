@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import { COLOR } from '../../../lib/color';
+import { breakpoints } from '../../../lib/media';
 
 const Career = () => (
   <Wrapper>
     <Header>
-      <Title>React와 TypeScript를 주 언어로 사용하고 있는 프론트엔드 개발자입니다. </Title>
+      <Title>React와 TypeScript를 주 언어로 사용하고 있는 프론트엔드 개발자입니다.</Title>
       <Description>
         현재 봉제업 솔루션 스타트업에서 초기 개발팀에 속하여, 개발 → PoC 및 검증 → 피드백 수집
         과정을 거쳐 현재 버전업 개발 중입니다.
@@ -78,48 +79,60 @@ const Wrapper = styled.article`
   gap: 16px;
   padding: 40px 56px;
   box-shadow: 0 5px 18px -2px rgba(0, 0, 0, 0.1);
+  font-size: 28px;
+  line-height: 40px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    padding: 5%;
+    line-height: 28px;
+    font-size: 20px;
+  }
 `;
 const Header = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+
   gap: 12px;
 `;
 const Title = styled.h2`
-  font-size: 28px;
+  font-size: 1em;
   font-weight: 500;
+  word-break: keep-all;
 `;
 const Description = styled.p`
-  font-size: 16px;
-  line-height: 40px;
+  font-size: 0.6em;
+  line-height: 1.4em;
 `;
 const Contents = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
   padding: 12px 8px;
+  @media (max-width: ${breakpoints.tablet}) {
+    padding: 4px;
+  }
 `;
 const Content = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 0.2em;
 `;
 const SubTitle = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
   margin: 0;
-  font-size: 20px;
+  font-size: 0.8em;
   font-weight: 500;
   color: ${COLOR.gray900};
 `;
 const Icon = styled.p`
-  font-size: 32px;
+  font-size: 1.4em;
   font-family: Tossface;
 `;
 const UL = styled.ul`
-  font-size: 18px;
-  line-height: 32px;
+  font-size: 0.6em;
+  line-height: 1.6em;
   margin: 0px 24px;
 `;
 
