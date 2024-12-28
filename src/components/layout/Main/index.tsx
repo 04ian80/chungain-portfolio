@@ -1,17 +1,16 @@
 import styled from 'styled-components';
-import Profile from './Profile';
-import Greeting from './Greeting';
-import { AiOutlineDown as _AiOutlineDown } from 'react-icons/ai';
-import { COLOR } from '../../../lib/color';
 import { breakpoints } from '../../../lib/media';
+import Skills from '../Skills';
+import Profile from './Profile';
+import Introduction from '../Introduction';
 
-const Main = ({ onScrollNextView }: { onScrollNextView: () => void }) => (
+const Main = () => (
   <Container>
     <Wrapper>
       <Profile />
-      <Greeting />
+      <Skills />
+      <Introduction />
     </Wrapper>
-    <AiOutlineDown onClick={onScrollNextView} />
   </Container>
 );
 
@@ -23,48 +22,26 @@ const Container = styled.article`
   min-height: calc(100vh - 130px);
   height: 100%;
   border-radius: 16px;
-  box-shadow: 0 5px 18px -2px rgba(0, 0, 0, 0.1);
-  margin-top: 95px;
+  margin-top: 50px;
   padding-block: 40px;
-  box-sizing: border-box;
+  box-sizing: c-box;
 `;
 const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 80px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas:
+    'profile introduction'
+    'skills  introduction';
+  gap: 16px;
   height: 100%;
   margin: auto 0;
 
-  @media (max-width: ${breakpoints.wide}) {
-    flex-direction: column;
-  }
-`;
-const AiOutlineDown = styled(_AiOutlineDown)`
-  width: 40px;
-  height: 40px;
-  color: ${COLOR.gray800};
-  cursor: pointer;
-  opacity: 0;
-  animation-name: updown;
-  animation-duration: 1.4s;
-  animation-delay: 1.4s;
-  animation-iteration-count: infinite;
-  animation-fill-mode: forwards;
-
-  @keyframes updown {
-    0% {
-      opacity: 1;
-      transform: translateY(10px);
-    }
-    50% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(10px);
-    }
+  @media (max-width: ${breakpoints.xwide}) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'profile'
+      'introduction'
+      'skills';
   }
 `;
 export default Main;

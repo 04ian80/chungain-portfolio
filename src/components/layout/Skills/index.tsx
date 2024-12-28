@@ -63,22 +63,38 @@ const Skills = () => (
 );
 
 const Wrapper = styled.div`
+  grid-area: skills;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
   padding: 40px 56px;
-  box-shadow: 0 5px 18px -2px rgba(0, 0, 0, 0.1);
-  height: 100%;
   border-radius: 16px;
-`;
-const Title = styled.h2`
-  font-size: 28px;
+  opacity: 0;
+  animation: fade-in 0.6s 0.2s ease forwards;
+  font-size: 24px;
   @media (max-width: ${breakpoints.tablet}) {
+    font-size: 16px;
+  }
+  @media (max-width: ${breakpoints.desktop}) {
     font-size: 18px;
   }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+`;
+const Title = styled.h2`
+  font-size: 1em;
 `;
 const Heading3 = styled.h3`
-  font-size: 18px;
+  font-size: 0.64em;
   font-weight: 600;
   margin: 0;
   @media (max-width: ${breakpoints.tablet}) {
@@ -88,7 +104,7 @@ const Heading3 = styled.h3`
 const Grid = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 18px;
+  gap: 8px;
   width: fit-content;
 `;
 const Badge = styled.div`
@@ -100,7 +116,7 @@ const Badge = styled.div`
   border-radius: 8px;
   background-color: #eee;
   font-family: D2Coding;
-  font-size: 16px;
+  font-size: 0.6em;
 
   @media (max-width: ${breakpoints.tablet}) {
     border-radius: 4px;

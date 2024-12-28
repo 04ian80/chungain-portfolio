@@ -12,7 +12,7 @@ const Career = () => (
       </Description>
     </Header>
     <Contents>
-      <Content>
+      <Content $delay={0.4}>
         <SubTitle>
           <Icon>🔄</Icon>
           <p>확장성과 재사용성을 중요시합니다</p>
@@ -29,7 +29,7 @@ const Career = () => (
           </li>
         </UL>
       </Content>
-      <Content>
+      <Content $delay={0.6}>
         <SubTitle>
           <Icon>🤼</Icon>
           <p>커뮤니케이션을 즐깁니다</p>
@@ -49,7 +49,7 @@ const Career = () => (
           </li>
         </UL>
       </Content>
-      <Content>
+      <Content $delay={0.8}>
         <SubTitle>
           <Icon>🔎</Icon>
           <p>파고드는 습관이 있습니다</p>
@@ -73,19 +73,40 @@ const Career = () => (
 );
 
 const Wrapper = styled.article`
+  grid-area: introduction;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 16px;
+  gap: 8px;
   padding: 40px 56px;
-  box-shadow: 0 5px 18px -2px rgba(0, 0, 0, 0.1);
-  font-size: 28px;
+  /* box-shadow: 0 5px 18px -2px rgba(0, 0, 0, 0.1); */
+  border-left: 1px solid ${COLOR.gray200};
+  /* border-radius: 16px; */
   line-height: 40px;
+  height: 100%;
+  box-sizing: border-box;
+  opacity: 0;
+  animation: fade-in 0.6s 0.4s ease forwards;
+  font-size: 28px;
 
   @media (max-width: ${breakpoints.tablet}) {
     padding: 5%;
     line-height: 28px;
     font-size: 20px;
+  }
+  @media (max-width: ${breakpoints.desktop}) {
+    font-size: 24px;
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
   }
 `;
 const Header = styled.div`
@@ -112,10 +133,22 @@ const Contents = styled.div`
     padding: 4px;
   }
 `;
-const Content = styled.div`
+const Content = styled.div<{ $delay?: number }>`
   display: flex;
   flex-direction: column;
   gap: 0.2em;
+  opacity: 0;
+  animation: ${({ $delay }) => `fade-in 0.6s ${$delay}s ease forwards`};
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
 `;
 const SubTitle = styled.div`
   display: flex;

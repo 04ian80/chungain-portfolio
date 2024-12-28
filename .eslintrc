@@ -14,7 +14,6 @@
     "no-console": ["warn", { "allow": ["warn", "error", "info"] }],
     "eqeqeq": "error",
     "dot-notation": "error",
-    "no-unused-vars": "error",
     "arrow-body-style": ["warn", "as-needed"],
     "react/self-closing-comp": [
       "warn",

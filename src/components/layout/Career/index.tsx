@@ -8,11 +8,18 @@ import { breakpoints } from '../../../lib/media';
 const Career = () => (
   <Wrapper>
     <Header>
-      <Title>시제</Title>
+      <Title>
+        <a href='https://sije.io/' target='_blank' rel='noreferrer'>
+          시제
+        </a>
+      </Title>
       <P>2023.08 - 재직중 &#40;1년 4개월&#41;</P>
       <Badge>프론트엔드 개발자</Badge>
       <Badge>주임</Badge>
     </Header>
+    <Description>
+      봉제업 공급망을 누구나 쉽게 사용할 수 있는 솔루션으로 혁신하는 스타트업입니다.
+    </Description>
     <Divider />
     <Content>
       <SubTitle>담당해온 업무</SubTitle>
@@ -32,9 +39,13 @@ const Wrapper = styled.article`
   padding: 40px 56px;
   box-shadow: 0 5px 18px -2px rgba(0, 0, 0, 0.1);
   font-size: 32px;
+  border-radius: 16px;
   @media (max-width: ${breakpoints.tablet}) {
     font-size: 24px;
-    padding: 5px;
+    padding: 40px 56px;
+  }
+  @media (max-width: ${breakpoints.mobile}) {
+    padding: 20px;
   }
 `;
 const Header = styled.div`
@@ -45,13 +56,16 @@ const Header = styled.div`
 `;
 const Title = styled.h2`
   font-size: 1em;
-  /* font-size: 32px; */
-  /* @media (max-width: ${breakpoints.tablet}) {
-    font-size: 24px;
-  } */
+  a {
+    text-decoration: none;
+    color: ${COLOR.gray900};
+    transition: color 0.2s ease;
+    &:hover {
+      color: ${COLOR.gray800};
+    }
+  }
 `;
 const P = styled.p`
-  /* font-size: 20px; */
   font-size: 0.6em;
   color: ${COLOR.gray800};
   font-weight: 500;
@@ -60,7 +74,6 @@ const Badge = styled.div`
   padding: 4px 12px;
   border-radius: 24px;
   background-color: ${COLOR.gray100};
-  /* font-size: 16px; */
   font-size: 0.5em;
   line-height: 30px;
 `;
@@ -75,7 +88,10 @@ const Content = styled.div`
   gap: 16px;
   padding: 12px 8px;
 `;
-
+const Description = styled.p`
+  color: ${COLOR.gray800};
+  font-size: 0.6em;
+`;
 const SubTitle = styled.h3`
   margin: 0;
   font-size: 28px;

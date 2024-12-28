@@ -1,94 +1,139 @@
 import styled from 'styled-components';
 import { COLOR } from '../../../lib/color';
 import { breakpoints } from '../../../lib/media';
+// import { AiFillGithub } from 'react-icons/ai';
 
 const contactData = [
-  { href: 'mailto:devain2211@gmail.com', title: 'Email', text: 'devain2211@gmail.com' },
-  { href: 'tel:01096776912', title: 'Phone', text: '010-9677-6912' },
-  { href: 'https://github.com/04ian80', title: 'GitHub', text: 'https://github.com/04ian80' },
-  { href: 'https://velog.io/@a_in', title: 'Blog', text: 'https://velog.io/@a_in' },
+  { href: 'mailto:devain2211@gmail.com', title: 'Email', text: 'devain2211@gmail.com', icon: '📧' },
+  { href: 'tel:01096776912', title: 'Phone', text: '010-9677-6912', icon: '📞' },
+  {
+    href: 'https://github.com/04ian80',
+    title: 'GitHub',
+    text: 'https://github.com/04ian80',
+    icon: '👩🏻‍💻',
+    // icon: <AiFillGithub width={40} height={40} />,
+  },
+  { href: 'https://velog.io/@a_in', title: 'Blog', text: 'https://velog.io/@a_in', icon: '🖋️' },
 ];
 
 const Profile = () => (
   <Wrapper>
-    <Image src={'/image/profile.png'} alt='프로필 이미지' />
+    <ImageBG>
+      <Image src={'/image/profile.png'} alt='프로필 이미지' />
+    </ImageBG>
     <Contact>
-      <DL>
-        <div>
-          {contactData.map((contact, idx) => (
-            <DT key={idx}>{contact.title}</DT>
-          ))}
-        </div>
-        <Bar />
-        <div>
-          {contactData.map((contact, idx) => (
-            <DD key={idx}>
-              <a
-                href={contact.href}
-                target='_blank'
-                rel='noopenner noreferrer'
-                className='introduction__contact--anchor'
-              >
-                {contact.text}
-              </a>
-            </DD>
-          ))}
-        </div>
-      </DL>
+      {/* <Bar /> */}
+      {/* <div> */}
+      {contactData.map((contact, idx) => (
+        // <DD key={idx}>
+        <Link
+          key={idx}
+          href={contact.href}
+          target='_blank'
+          rel='noopenner noreferrer'
+          className='introduction__contact--anchor '
+        >
+          <p>{contact.icon}</p>
+          <p>{contact.title}</p>
+        </Link>
+        // </DD>
+      ))}
+      {/* </div> */}
+      {/* <DL>
+      </DL> */}
     </Contact>
   </Wrapper>
 );
 
 const Wrapper = styled.div`
+  grid-area: profile;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 28px;
+  /* border-radius: 16px; */
+  border-bottom: 1px solid ${COLOR.gray200};
+  /* box-shadow: 0 5px 18px -2px rgba(0, 0, 0, 0.1); */
+  padding: 28px;
+  font-size: 18px;
+
+  animation: fade-in 0.6s ease;
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+`;
+const ImageBG = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 210px;
+  height: 210px;
+  background-color: ${COLOR.gray100};
+  border-radius: 105px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  box-shadow: 0px 5px 15px -2px rgba(0, 0, 0, 0.3);
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 150px;
+    height: 150px;
+  }
 `;
 const Image = styled.img`
   width: 200px;
   height: 200px;
+  transition: transform 0.2s ease;
+  &:hover {
+    transform: scale(1.1);
+  }
 
-  @media (max-width: ${breakpoints.desktop}) {
-    width: 100px;
-    height: 100px;
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 140px;
+    height: 140px;
   }
 `;
 const Contact = styled.div`
   display: flex;
-  gap: 8px;
-  font-size: 18px;
-
-  @media (max-width: ${breakpoints.desktop}) {
-    font-size: 14px;
-  }
-`;
-const DL = styled.dl`
-  display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: 8px;
+  width: 100%;
+  padding: 12px;
+  max-width: 300px;
+`;
+
+const Link = styled.a`
   margin: 0;
-  div {
-    display: flex;
-    align-items: start;
-    flex-direction: column;
-    gap: 20px;
+  color: ${COLOR.gray950};
+  text-decoration: none;
+  text-align: center;
+
+  &:hover {
+    p:first-child {
+      transition: transform 0.2s ease;
+      transform: scale(1.1);
+    }
+    p:last-child {
+      transition: color 0.2s ease;
+      color: ${COLOR.gray900};
+    }
   }
-`;
-const DT = styled.dt`
-  font-weight: 500;
-`;
-const DD = styled.dd`
-  margin: 0;
-  a {
-    color: ${COLOR.gray950};
+
+  p:first-child {
+    font-family: Tossface;
+    font-size: 1.4em;
+    will-change: transform;
   }
-`;
-const Bar = styled.div`
-  width: 1px;
-  height: 130px;
-  background-color: ${COLOR.gray400};
+  p:last-child {
+    font-size: 0.8em;
+    color: ${COLOR.gray700};
+  }
 `;
 
 export default Profile;
