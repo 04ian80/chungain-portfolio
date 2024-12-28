@@ -72,7 +72,9 @@ const Wrapper = styled.div`
   opacity: 0;
   animation: fade-in 0.6s 0.2s ease forwards;
   font-size: 24px;
+
   @media (max-width: ${breakpoints.tablet}) {
+    padding: 20px;
     font-size: 16px;
   }
   @media (max-width: ${breakpoints.desktop}) {

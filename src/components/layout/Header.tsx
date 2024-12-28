@@ -44,6 +44,10 @@ const Inner = styled.div`
   justify-content: space-between;
   width: 70%;
   max-width: 1280px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 100%;
+  }
 `;
 
 const Wrapper = styled.header`

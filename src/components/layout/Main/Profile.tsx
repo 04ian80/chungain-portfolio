@@ -52,11 +52,12 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   gap: 28px;
-  /* border-radius: 16px; */
   border-bottom: 1px solid ${COLOR.gray200};
-  /* box-shadow: 0 5px 18px -2px rgba(0, 0, 0, 0.1); */
   padding: 28px;
   font-size: 18px;
+  @media (max-width: ${breakpoints.xwide}) {
+    border-bottom: none;
+  }
 
   animation: fade-in 0.6s ease;
   @keyframes fade-in {

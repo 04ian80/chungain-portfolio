@@ -39,9 +39,15 @@ const Wrapper = styled.div`
   @media (max-width: ${breakpoints.xwide}) {
     grid-template-columns: 1fr;
     grid-template-areas:
+      'profile skills'
+      'introduction introduction';
+  }
+  @media (max-width: ${breakpoints.desktop}) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
       'profile'
-      'introduction'
-      'skills';
+      'skills'
+      'introduction';
   }
 `;
 export default Main;

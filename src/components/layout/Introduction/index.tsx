@@ -79,9 +79,7 @@ const Wrapper = styled.article`
   align-items: flex-start;
   gap: 8px;
   padding: 40px 56px;
-  /* box-shadow: 0 5px 18px -2px rgba(0, 0, 0, 0.1); */
   border-left: 1px solid ${COLOR.gray200};
-  /* border-radius: 16px; */
   line-height: 40px;
   height: 100%;
   box-sizing: border-box;
@@ -96,6 +94,11 @@ const Wrapper = styled.article`
   }
   @media (max-width: ${breakpoints.desktop}) {
     font-size: 24px;
+  }
+
+  @media (max-width: ${breakpoints.xwide}) {
+    border-left: none;
+    border-top: 1px solid ${COLOR.gray200};
   }
 
   @keyframes fade-in {

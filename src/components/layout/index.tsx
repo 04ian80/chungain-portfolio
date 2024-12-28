@@ -46,8 +46,6 @@ const Container = styled.main`
   padding: 0 20px;
   display: flex;
   position: relative;
-  /* flex-direction: column; */
-  /* align-items: center; */
   justify-content: center;
   gap: 28px;
   margin-bottom: 20px;
@@ -55,6 +53,10 @@ const Container = styled.main`
 const Inner = styled.div`
   width: 80%;
   max-width: 1280px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 100%;
+  }
 `;
 const Screen = styled.section<{ $fitContent?: boolean }>`
   height: ${({ $fitContent }) => ($fitContent ? 'fit-content' : '100vh')};
