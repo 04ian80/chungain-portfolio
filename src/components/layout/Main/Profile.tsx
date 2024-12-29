@@ -46,7 +46,6 @@ const Profile = () => (
 );
 
 const Wrapper = styled.div`
-  grid-area: profile;
   display: flex;
   flex-direction: column;
   align-items: center;

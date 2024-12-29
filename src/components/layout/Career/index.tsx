@@ -22,7 +22,7 @@ const Career = () => (
     </Description>
     <Divider />
     <Content>
-      <SubTitle>담당해온 업무</SubTitle>
+      {/* <SubTitle>담당해온 업무</SubTitle> */}
       <Summary />
     </Content>
     <Content>
@@ -37,8 +37,8 @@ const Wrapper = styled.article`
   flex-direction: column;
   gap: 16px;
   padding: 40px 56px;
-  box-shadow: 0 5px 18px -2px rgba(0, 0, 0, 0.1);
-  font-size: 32px;
+  /* box-shadow: 0 5px 18px -2px rgba(0, 0, 0, 0.1); */
+  font-size: 24px;
   border-radius: 16px;
   @media (max-width: ${breakpoints.tablet}) {
     font-size: 24px;

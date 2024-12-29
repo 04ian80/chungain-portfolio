@@ -63,12 +63,12 @@ const Screen = styled.section<{ $fitContent?: boolean }>`
   scroll-margin: 80px;
 `;
 const Heading1 = styled.h1`
-  font-size: 44px;
-  padding: 0 56px;
+  font-size: 32px;
+  /* padding: 0 56px; */
 
   @media (max-width: ${breakpoints.tablet}) {
-    padding: 0 32px;
-    font-size: 24px;
+    padding: 0 16px;
+    font-size: 28px;
   }
 `;
 const Nav = styled.nav`

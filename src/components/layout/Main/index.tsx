@@ -7,8 +7,10 @@ import Introduction from '../Introduction';
 const Main = () => (
   <Container>
     <Wrapper>
-      <Profile />
-      <Skills />
+      <LeftGrid>
+        <Profile />
+        <Skills />
+      </LeftGrid>
       <Introduction />
     </Wrapper>
   </Container>
@@ -26,12 +28,18 @@ const Container = styled.article`
   padding-block: 40px;
   box-sizing: c-box;
 `;
+const LeftGrid = styled.div`
+  position: sticky;
+  top: 50px;
+  grid-area: profile;
+`;
 const Wrapper = styled.div`
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-areas:
     'profile introduction'
-    'skills  introduction';
+    'empty  introduction';
   gap: 16px;
   height: 100%;
   margin: auto 0;
