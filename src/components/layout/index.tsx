@@ -4,19 +4,24 @@ import { COLOR } from '../../lib/color';
 import { breakpoints } from '../../lib/media';
 import Career from './Career';
 import Main from './Main';
+import Skills from './Skills';
 
-const navList = ['소개', '경력'];
+const navList = ['소개', '경력', '스택', '교육/학력'];
 
 const Layout = () => {
   const { currentView, sectionRefs, onChangeView } = useScrollView({ defaultValue: '소개' });
 
   const handleClickNav = ({ nav }: { nav: string }) => {
-    onChangeView(nav);
+    const timer = setTimeout(() => {
+      onChangeView(nav);
+      return () => clearTimeout(timer);
+    }, 1000);
 
     sectionRefs.current[nav]?.scrollIntoView({
       behavior: 'smooth',
     });
   };
+
   return (
     <Container>
       <Inner>
@@ -27,10 +32,18 @@ const Layout = () => {
           <Heading1>경력</Heading1>
           <Career />
         </Screen>
+        <Screen data-section-id='스택' ref={el => (sectionRefs.current['스택'] = el)}>
+          <Heading1>스택</Heading1>
+          <Skills />
+        </Screen>
+        <Screen data-section-id='교육/학력' ref={el => (sectionRefs.current['교육/학력'] = el)}>
+          <Heading1>교육/학력</Heading1>
+          <Skills />
+        </Screen>
       </Inner>
       <Nav>
         <ul>
-          <Tab $tab={currentView} />
+          <TabIndicator $tab={currentView} />
           {navList.map(nav => (
             <Item $active={currentView === nav} key={nav} onClick={() => handleClickNav({ nav })}>
               <button>{nav}</button>
@@ -102,14 +115,14 @@ const Item = styled.li<{ $active: boolean }>`
       `};
   }
 `;
-const Tab = styled.div<{ $tab: string }>`
+const TabIndicator = styled.div<{ $tab: string }>`
   border: 1px solid ${COLOR.gray950};
   padding: 2px 4px;
   height: 20px;
   width: 34px;
   border-radius: 4px;
   z-index: -1;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, width 0.2s ease;
   ${({ $tab }) => {
     if ($tab === '소개') {
       return css`
@@ -119,6 +132,17 @@ const Tab = styled.div<{ $tab: string }>`
     if ($tab === '경력') {
       return css`
         transform: translateY(59px) translateX(-2px);
+      `;
+    }
+    if ($tab === '스택') {
+      return css`
+        transform: translateY(88px) translateX(-2px);
+      `;
+    }
+    if ($tab === '교육/학력') {
+      return css`
+        width: 64px;
+        transform: translateY(117px) translateX(-2px);
       `;
     }
   }};

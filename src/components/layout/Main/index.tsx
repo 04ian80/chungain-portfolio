@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { breakpoints } from '../../../lib/media';
-import Skills from '../Skills';
+import Skills from '../Skills/Summary';
 import Profile from './Profile';
 import Introduction from '../Introduction';
 
