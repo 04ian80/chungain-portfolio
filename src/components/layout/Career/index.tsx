@@ -31,7 +31,6 @@ const Career = () => {
       </Description>
       <Divider />
       <Content>
-        {/* <SubTitle>담당해온 업무</SubTitle> */}
         <Summary />
       </Content>
     </Wrapper>
@@ -43,7 +42,6 @@ const Wrapper = styled.article`
   flex-direction: column;
   gap: 16px;
   padding: 40px 56px;
-  /* box-shadow: 0 5px 18px -2px rgba(0, 0, 0, 0.1); */
   font-size: 24px;
   border-radius: 16px;
   @media (max-width: ${breakpoints.tablet}) {
@@ -97,12 +95,6 @@ const Content = styled.div`
 const Description = styled.p`
   color: ${COLOR.gray800};
   font-size: 0.6em;
-`;
-const SubTitle = styled.h3`
-  margin: 0;
-  font-size: 28px;
-  color: ${COLOR.gray900};
-  font-size: 0.8em;
 `;
 
 export default Career;

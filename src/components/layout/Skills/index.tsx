@@ -11,54 +11,24 @@ import IconGitHub from '../../svg/GiHub';
 import IconJira from '../../svg/IconJira';
 import IconConfluence from '../../svg/IconConfluence';
 import { breakpoints } from '../../../lib/media';
+import { Fragment } from 'react';
 
 const Skills = () => (
   <Wrapper>
     <Title>Skills</Title>
-    <Heading3>Technical Skills</Heading3>
-    <Grid>
-      <Badge>
-        <IconJavaScript />
-        JavaScript
-      </Badge>
-      <Badge>
-        <TypeScript />
-        TypeScript
-      </Badge>
-      <Badge>
-        <IconReact />
-        React
-      </Badge>
-      <Badge>
-        <IconTanstackQuery />
-        Tanstack-Query
-      </Badge>
-    </Grid>
-    <Grid>
-      <Badge>
-        <IconStyledComponents /> styled-components
-      </Badge>
-      <Badge>
-        <IconTailwindCSS /> tailwindCSS
-      </Badge>
-      <Badge>
-        <IconSass />
-        Sass
-      </Badge>
-    </Grid>
-    <Heading3>Tools & Collaboration</Heading3>
-    <Grid>
-      <Badge>
-        <IconGitHub color='#000' size={20} /> GitHub
-      </Badge>
-      <Badge>
-        <IconJira /> Jira
-      </Badge>
-      <Badge>
-        <IconConfluence />
-        Confluence
-      </Badge>
-    </Grid>
+    {skillList.map(skill => (
+      <Fragment key={skill.heading}>
+        <Heading3>{skill.heading}</Heading3>
+        <Grid>
+          {skill.skills.map(sk => (
+            <Badge key={sk.name}>
+              {sk.icon}
+              {sk.name}
+            </Badge>
+          ))}
+        </Grid>
+      </Fragment>
+    ))}
   </Wrapper>
 );
 
@@ -133,3 +103,56 @@ const Badge = styled.div`
 `;
 
 export default Skills;
+
+const skillList = [
+  {
+    heading: 'Technical Skills',
+    skills: [
+      {
+        icon: <IconJavaScript />,
+        name: 'JavaScript',
+      },
+      {
+        icon: <TypeScript />,
+        name: 'TypeScript',
+      },
+      {
+        icon: <IconReact />,
+        name: 'React',
+      },
+      {
+        icon: <IconTanstackQuery />,
+        name: 'Tanstack-Query',
+      },
+      {
+        icon: <IconStyledComponents />,
+        name: 'styled-components',
+      },
+      {
+        icon: <IconTailwindCSS />,
+        name: 'tailwindCSS',
+      },
+      {
+        icon: <IconSass />,
+        name: 'Sass',
+      },
+    ],
+  },
+  {
+    heading: 'Tools & Collaboration',
+    skills: [
+      {
+        icon: <IconGitHub color='#000' size={20} />,
+        name: ' GitHub',
+      },
+      {
+        icon: <IconJira />,
+        name: ' Jira',
+      },
+      {
+        icon: <IconConfluence />,
+        name: 'Confluence',
+      },
+    ],
+  },
+];

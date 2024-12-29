@@ -104,9 +104,9 @@ const Career = () => {
               위해 실시간으로 디자이너와 토론했던 순간은 제게 있어 가장 보람찬 순간 중 하나였습니다.
             </li>
             <li>
-              박람회용 데모 버전 개발에서는 *있어빌리티가 중요한 요소였기에,{' '}
+              박람회용 데모 버전 개발에서는 화려함이 중요한 요소였기 때문에,{' '}
               <b>
-                CSS와 애니메이션 라이브러리인 Framer Motion을 활용해 단기간 내에 다양한 애니메이션을
+                CSS와 애니메이션 라이브러리인 framer-motion을 활용해 단기간 내에 다양한 애니메이션을
                 구현
               </b>
               했습니다. 스케줄러 데이터 조회 시 도미노처럼 펼쳐지는 애니메이션과 버튼 클릭을
@@ -114,11 +114,6 @@ const Career = () => {
               UI를 완성했습니다. 이를 통해 요구사항을 충족하며{' '}
               <b>모두가 만족하는 결과물을 도출한 경험</b>이 있습니다.
             </li>
-            <Annotation>
-              *있어빌리티: ‘있어 보인다’와 유틸리티&#40;utility&#41;를 결합한 단어로, 실용성과 기능
-              이상의 가치를 전달하기 위해 화면에 시각적 매력과 사용자 경험을 향상시키는 것을
-              의미합니다.
-            </Annotation>
           </UL>
         </Content>
         <Content $delay={0.2}>
@@ -263,9 +258,5 @@ const UL = styled.ul`
 //     box-shadow: 0px 5px 18px -2px rgba(0, 0, 0, 0.1);
 //   }
 // `;
-const Annotation = styled.small`
-  font-size: 0.8em;
-  color: ${COLOR.gray800};
-`;
 
 export default Career;

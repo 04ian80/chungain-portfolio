@@ -1,7 +1,6 @@
-import { useState } from 'react';
 import type { PropsWithChildren, ReactNode } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
-import { COLOR } from '../lib/color';
 
 interface TooltipWrapperType extends PropsWithChildren {
   content: ReactNode;
