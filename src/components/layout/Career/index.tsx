@@ -1,10 +1,8 @@
-import React from 'react';
 import styled from 'styled-components';
-import { COLOR } from '../../../lib/color';
-import Summary from './Summary';
-import Timeline from './Timeline';
-import { breakpoints } from '../../../lib/media';
 import useTooltip from '../../../hooks/useTooltip';
+import { COLOR } from '../../../lib/color';
+import { breakpoints } from '../../../lib/media';
+import Summary from './Summary';
 
 const Career = () => {
   const { TooltipWrapper } = useTooltip();
@@ -27,9 +25,9 @@ const Career = () => {
             '제품 생산에 사물인터넷, 빅데이터 등 다양한 정보통신기술을 결합해 고객 맞춤형 제품을 생산하는 지능형 공장'
           }
         >
-          스마트 팩토리 솔루션
+          스마트 팩토리
         </TooltipWrapper>{' '}
-        스타트업입니다.
+        솔루션 스타트업입니다.
       </Description>
       <Divider />
       <Content>
