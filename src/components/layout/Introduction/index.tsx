@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { COLOR } from '../../../lib/color';
 import { breakpoints } from '../../../lib/media';
+import { SubTitle } from '../../common/styles';
 
 const Career = () => {
   return (
@@ -237,15 +238,7 @@ const Content = styled.div<{ $delay?: number }>`
     }
   }
 `;
-const SubTitle = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 0;
-  font-size: 0.8em;
-  font-weight: 500;
-  color: ${COLOR.gray900};
-`;
+
 const Icon = styled.p`
   font-size: 1.4em;
   font-family: Tossface;

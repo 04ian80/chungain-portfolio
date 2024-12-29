@@ -4,33 +4,41 @@ import { COLOR } from '../../../lib/color';
 import Summary from './Summary';
 import Timeline from './Timeline';
 import { breakpoints } from '../../../lib/media';
+import useTooltip from '../../../hooks/useTooltip';
 
-const Career = () => (
-  <Wrapper>
-    <Header>
-      <Title>
-        <a href='https://sije.io/' target='_blank' rel='noreferrer'>
-          시제
-        </a>
-      </Title>
-      <P>2023.08 - 재직중 &#40;1년 4개월&#41;</P>
-      <Badge>프론트엔드 개발자</Badge>
-      <Badge>주임</Badge>
-    </Header>
-    <Description>
-      봉제업 공급망을 누구나 쉽게 사용할 수 있는 솔루션으로 혁신하는 스타트업입니다.
-    </Description>
-    <Divider />
-    <Content>
-      {/* <SubTitle>담당해온 업무</SubTitle> */}
-      <Summary />
-    </Content>
-    <Content>
-      <SubTitle>Timeline</SubTitle>
-      <Timeline />
-    </Content>
-  </Wrapper>
-);
+const Career = () => {
+  const { TooltipWrapper } = useTooltip();
+  return (
+    <Wrapper>
+      <Header>
+        <Title>
+          <a href='https://sije.io/' target='_blank' rel='noreferrer'>
+            시제
+          </a>
+        </Title>
+        <P>2023.08 - 재직중 &#40;1년 4개월&#41;</P>
+        <Badge>프론트엔드 개발자</Badge>
+        <Badge>주임</Badge>
+      </Header>
+      <Description>
+        봉제업 공급망을 누구나 쉽게 사용할 수 있는 솔루션으로 혁신하는{' '}
+        <TooltipWrapper
+          content={
+            '제품 생산에 사물인터넷, 빅데이터 등 다양한 정보통신기술을 결합해 고객 맞춤형 제품을 생산하는 지능형 공장'
+          }
+        >
+          스마트 팩토리 솔루션
+        </TooltipWrapper>{' '}
+        스타트업입니다.
+      </Description>
+      <Divider />
+      <Content>
+        {/* <SubTitle>담당해온 업무</SubTitle> */}
+        <Summary />
+      </Content>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.article`
   display: flex;
@@ -58,7 +66,7 @@ const Title = styled.h2`
   font-size: 1em;
   a {
     text-decoration: none;
-    color: ${COLOR.gray900};
+    color: ${COLOR.primary900};
     transition: color 0.2s ease;
     &:hover {
       color: ${COLOR.gray800};
