@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { COLOR } from '../../../lib/color';
 import { breakpoints } from '../../../lib/media';
-// import { AiFillGithub } from 'react-icons/ai';
 
 const contactData = [
   { href: 'mailto:devain2211@gmail.com', title: 'Email', text: 'devain2211@gmail.com', icon: '📧' },
@@ -11,7 +10,6 @@ const contactData = [
     title: 'GitHub',
     text: 'https://github.com/04ian80',
     icon: '👩🏻‍💻',
-    // icon: <AiFillGithub width={40} height={40} />,
   },
   { href: 'https://velog.io/@a_in', title: 'Blog', text: 'https://velog.io/@a_in', icon: '🖋️' },
 ];
@@ -22,10 +20,7 @@ const Profile = () => (
       <Image src={'/image/profile.png'} alt='프로필 이미지' />
     </ImageBG>
     <Contact>
-      {/* <Bar /> */}
-      {/* <div> */}
       {contactData.map((contact, idx) => (
-        // <DD key={idx}>
         <Link
           key={idx}
           href={contact.href}
@@ -36,11 +31,7 @@ const Profile = () => (
           <p>{contact.icon}</p>
           <p>{contact.title}</p>
         </Link>
-        // </DD>
       ))}
-      {/* </div> */}
-      {/* <DL>
-      </DL> */}
     </Contact>
   </Wrapper>
 );
