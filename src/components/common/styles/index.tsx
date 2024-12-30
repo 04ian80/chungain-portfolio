@@ -44,5 +44,4 @@ export const Icon = styled.p`
 export const UL = styled.ul`
   font-size: 0.6em;
   line-height: 1.6em;
-  margin: 0px 24px;
 `;

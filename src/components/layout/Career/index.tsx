@@ -1,11 +1,9 @@
 import styled from 'styled-components';
-import useTooltip from '../../../hooks/useTooltip';
 import { COLOR } from '../../../lib/color';
 import { breakpoints } from '../../../lib/media';
 import Summary from './Summary';
 
 const Career = () => {
-  const { TooltipWrapper } = useTooltip();
   return (
     <Wrapper>
       <Header>
@@ -19,15 +17,8 @@ const Career = () => {
         <Badge>주임</Badge>
       </Header>
       <Description>
-        봉제업 공급망을 누구나 쉽게 사용할 수 있는 솔루션으로 혁신하는{' '}
-        <TooltipWrapper
-          content={
-            '제품 생산에 사물인터넷, 빅데이터 등 다양한 정보통신기술을 결합해 고객 맞춤형 제품을 생산하는 지능형 공장'
-          }
-        >
-          스마트 팩토리
-        </TooltipWrapper>{' '}
-        솔루션 스타트업입니다.
+        봉제업 공급망을 누구나 쉽게 사용할 수 있는 솔루션으로 혁신하는 스마트 팩토리 솔루션
+        스타트업입니다.
       </Description>
       <Divider />
       <Content>
@@ -41,12 +32,10 @@ const Wrapper = styled.article`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 40px 56px;
   font-size: 24px;
   border-radius: 16px;
   @media (max-width: ${breakpoints.tablet}) {
     font-size: 24px;
-    padding: 40px 56px;
   }
   @media (max-width: ${breakpoints.mobile}) {
     padding: 20px;

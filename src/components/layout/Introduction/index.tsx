@@ -139,15 +139,6 @@ const Career = () => {
           </UL>
         </Content>
       </Contents>
-      {/* {isSeeMore ? (
-        <Button onClick={() => setIsSeeMore(false)}>
-          간략히 보기 <AiFillCaretUp fill={COLOR.black} />
-        </Button>
-      ) : (
-        <Button onClick={() => setIsSeeMore(true)}>
-          더보기 <AiFillCaretDown fill={COLOR.black} />
-        </Button>
-      )} */}
     </Wrapper>
   );
 };
@@ -159,7 +150,6 @@ const Wrapper = styled.article`
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
-  padding: 40px 56px;
   border-left: 1px solid ${COLOR.gray200};
   line-height: 40px;
   height: 100%;
@@ -167,9 +157,10 @@ const Wrapper = styled.article`
   opacity: 0;
   animation: fade-in 0.6s 0.4s ease forwards;
   font-size: 24px;
+  padding: 5%;
 
   @media (max-width: ${breakpoints.tablet}) {
-    padding: 5%;
+    padding: 40px 0;
     line-height: 28px;
     font-size: 20px;
   }
@@ -196,7 +187,6 @@ const Wrapper = styled.article`
 const Header = styled.div`
   display: flex;
   flex-direction: column;
-
   gap: 12px;
 `;
 const Title = styled.h2`
@@ -234,7 +224,6 @@ const Content = styled.div<{ $delay?: number }>`
     }
   }
 `;
-
 const Icon = styled.p`
   font-size: 1.4em;
   font-family: Tossface;
@@ -244,19 +233,4 @@ const UL = styled.ul`
   line-height: 1.6em;
   margin: 0px 24px;
 `;
-// const Button = styled.button`
-//   display: flex;
-//   align-items: center;
-//   align-self: flex-end;
-//   gap: 4px;
-//   padding: 4px 8px;
-//   border-radius: 16px;
-//   border: 1px solid ${COLOR.gray800};
-//   cursor: pointer;
-//   transition: box-shadow 0.2s ease;
-//   &:hover {
-//     box-shadow: 0px 5px 18px -2px rgba(0, 0, 0, 0.1);
-//   }
-// `;
-
 export default Career;

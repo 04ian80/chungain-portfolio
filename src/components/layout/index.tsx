@@ -3,10 +3,11 @@ import { useScrollView } from '../../hooks/useScrollObserver';
 import { COLOR } from '../../lib/color';
 import { breakpoints } from '../../lib/media';
 import Career from './Career';
+import Education from './Education';
+import Language from './Language';
 import Main from './Main';
-import Skills from './Skills';
 
-const navList = ['소개', '경력', '스택', '교육/학력'];
+const navList = ['소개', '경력', '교육/학력', '어학사항'];
 
 const Layout = () => {
   const { currentView, sectionRefs, onChangeView } = useScrollView({ defaultValue: '소개' });
@@ -15,7 +16,7 @@ const Layout = () => {
     const timer = setTimeout(() => {
       onChangeView(nav);
       return () => clearTimeout(timer);
-    }, 1000);
+    }, 800);
 
     sectionRefs.current[nav]?.scrollIntoView({
       behavior: 'smooth',
@@ -23,35 +24,45 @@ const Layout = () => {
   };
 
   return (
-    <Container>
-      <Inner>
-        <Screen $fitContent data-section-id='소개' ref={el => (sectionRefs.current['소개'] = el)}>
-          <Main />
-        </Screen>
-        <Screen $fitContent data-section-id='경력' ref={el => (sectionRefs.current['경력'] = el)}>
-          <Heading1>경력</Heading1>
-          <Career />
-        </Screen>
-        <Screen data-section-id='스택' ref={el => (sectionRefs.current['스택'] = el)}>
-          <Heading1>스택</Heading1>
-          <Skills />
-        </Screen>
-        <Screen data-section-id='교육/학력' ref={el => (sectionRefs.current['교육/학력'] = el)}>
-          <Heading1>교육/학력</Heading1>
-          <Skills />
-        </Screen>
-      </Inner>
-      <Nav>
-        <ul>
-          <TabIndicator $tab={currentView} />
-          {navList.map(nav => (
-            <Item $active={currentView === nav} key={nav} onClick={() => handleClickNav({ nav })}>
-              <button>{nav}</button>
-            </Item>
-          ))}
-        </ul>
-      </Nav>
-    </Container>
+    <>
+      <Container>
+        <Inner>
+          <Screen $fitContent data-section-id='소개' ref={el => (sectionRefs.current['소개'] = el)}>
+            <Main />
+          </Screen>
+          <Screen $fitContent data-section-id='경력' ref={el => (sectionRefs.current['경력'] = el)}>
+            <Heading1>경력</Heading1>
+            <Career />
+          </Screen>
+          <Screen
+            $fitContent
+            data-section-id='교육/학력'
+            ref={el => (sectionRefs.current['교육/학력'] = el)}
+          >
+            <Heading1>교육/학력</Heading1>
+            <Education />
+          </Screen>
+          <Screen
+            $fitContent
+            data-section-id='어학사항'
+            ref={el => (sectionRefs.current['어학사항'] = el)}
+          >
+            <Heading1>어학사항</Heading1>
+            <Language />
+          </Screen>
+        </Inner>
+        <Nav>
+          <ul>
+            <TabIndicator $tab={currentView} />
+            {navList.map(nav => (
+              <Item $active={currentView === nav} key={nav} onClick={() => handleClickNav({ nav })}>
+                <button>{nav}</button>
+              </Item>
+            ))}
+          </ul>
+        </Nav>
+      </Container>
+    </>
   );
 };
 
@@ -62,6 +73,7 @@ const Container = styled.main`
   justify-content: center;
   gap: 28px;
   margin-bottom: 20px;
+  box-sizing: content-box;
 `;
 const Inner = styled.div`
   width: 80%;
@@ -77,10 +89,10 @@ const Screen = styled.section<{ $fitContent?: boolean }>`
 `;
 const Heading1 = styled.h1`
   font-size: 32px;
-  /* padding: 0 56px; */
 
   @media (max-width: ${breakpoints.tablet}) {
-    padding: 0 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid ${COLOR.gray300};
     font-size: 28px;
   }
 `;
@@ -89,6 +101,7 @@ const Nav = styled.nav`
   top: 20%;
   height: 100%;
   margin-top: 50px;
+
   ul {
     display: flex;
     flex-direction: column;
@@ -134,14 +147,15 @@ const TabIndicator = styled.div<{ $tab: string }>`
         transform: translateY(59px) translateX(-2px);
       `;
     }
-    if ($tab === '스택') {
+    if ($tab === '교육/학력') {
       return css`
+        width: 65px;
         transform: translateY(88px) translateX(-2px);
       `;
     }
-    if ($tab === '교육/학력') {
+    if ($tab === '어학사항') {
       return css`
-        width: 64px;
+        width: 62px;
         transform: translateY(117px) translateX(-2px);
       `;
     }

@@ -49,7 +49,7 @@ const Wrapper = styled.div`
     font-size: 16px;
   }
   @media (max-width: ${breakpoints.desktop}) {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   @keyframes fade-in {

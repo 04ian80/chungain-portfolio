@@ -14,53 +14,27 @@ const LOGO_TEXT = '종아인의 포트폴리오';
 
 const Header = () => (
   <Wrapper>
-    <Inner>
-      <Heading1>{LOGO_TEXT}</Heading1>
-      {/* <UL>
-          {contactData.map(({ icon, color, size, link }, idx) => (
-            <li key={idx}>
-              <a
-                href={link}
-                target='_blank'
-                rel='noopenner noreferrer'
-                aria-label={`${icon}으로 이동`}
-              >
-                {iconEl(icon as keyof typeof IconMap, { color, size })}
-              </a>
-            </li>
-          ))}
-        </UL> */}
-    </Inner>
+    <Heading1>{LOGO_TEXT}</Heading1>
   </Wrapper>
 );
 
-const Inner = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 70%;
-  max-width: 1280px;
-
-  @media (max-width: ${breakpoints.tablet}) {
-    width: 100%;
-  }
-`;
-
 const Wrapper = styled.header`
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0px;
+  left: 0px;
+  right: 0px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 18px 32px;
+  justify-content: flex-start;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   -webkit-backdrop-filter: blur(5px);
   z-index: 1;
   font-size: 24px;
+  box-sizing: border-box;
+  padding: 18px 32px;
+  width: 100%;
   @media (max-width: ${breakpoints.tablet}) {
     font-size: 18px;
   }
